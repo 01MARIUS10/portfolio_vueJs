@@ -1,0 +1,25 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+
+  --violet:#46244c;
+  --magenta:#84395e;
+  --shimmer:#be5861;
+  --coral:#e8845c;
+  --h_yellow:#fdbb5b;
+  --icterine:#f9f871;
+
+
+
+/* button */
+  --var8:#4f4350;
+  --var9:#b5a7b6;
+
+/* grey */
+  --var10:#f6f6f6;
+  --var13:#aca9bb;
+  --var14:#5f5c6d;
+  --var11:#474554;
+
+
+
+}
