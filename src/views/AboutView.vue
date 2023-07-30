@@ -1,31 +1,33 @@
 <script setup>
-import presentation from '../components/molecules/presentation.vue';
-import skills from '@/components/molecules/skills.vue'
-import expertises from '@/components/molecules/expertises.vue'
-import projects from '@/components/molecules/projects.vue'
-import contact from '@/components/molecules/contact.vue'
+import presentation from '@/views/aboutView/presentation.vue';
+import hardSkills from '@/views/aboutView/hardSkills.vue';
+import strengths from '@/views/aboutView/strengths.vue';
+import projects from '@/views/aboutView/projects.vue';
+import contact from '@/views/aboutView/contact.vue';
 
-import projectTemplate from '@/components/molecules/projectTemplate.vue'
+import skills from '@/components/molecules/skills.vue';
+
 </script>
 <template>
   <div class="about">
-    <div class="presentation mx-2 mx-sm-3 mb-2">
+    <div id="presentation " class="mx-2 mx-sm-3 mb-sm-2 mb-xl-5">
       <presentation />
     </div>
-    <div class="expertises">
-      <expertises />
+    <div  id="hardSkills" class="">
+      <hardSkills />
     </div>
-    <div class="skills">
-      <skills />
+    <div id="strengths" class="">
+      <strengths />
     </div>
-    <div class="projects">
+    <div id="skills">
+      <skills :min="false"/>
+    </div>
+    <div id="projects">
       <projects />
     </div>
-    <projectTemplate />
-    <div clasas="contact">
+    <div id="contact">
       <contact />
     </div>
-    
   </div>
 </template>
 

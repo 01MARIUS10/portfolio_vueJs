@@ -1,5 +1,5 @@
 <script setup>
-import project from '@/components/molecules/project.vue'
+import project from '@/components/cellules/project.vue'
 </script>
 
 <template>

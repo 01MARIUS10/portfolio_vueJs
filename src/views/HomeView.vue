@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import typeAnimation from '@/components/cellules/typeAnimation.vue'
-import skills from '../components/molecules/skills.vue';
+import skills from '@/components/molecules/skills.vue';
 </script>
 
 <template>

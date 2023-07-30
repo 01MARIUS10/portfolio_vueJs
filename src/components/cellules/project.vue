@@ -5,5 +5,5 @@
     </div>
 </template>
 <script setup>
-import longCard from '../cellules/longCard.vue';
+import longCard from '@/components/cellules/hardSkillsCell.vue';
 </script>

@@ -1,6 +1,25 @@
+<script setup>
+import { ref } from 'vue';
+let props = defineProps({
+  theme:{
+        type:Number,
+        default:0
+    },
+  isPaire:{
+        type:Boolean,
+        default:false
+    }
+})
+let articleClass = ref([
+  (props.theme===1)? 'dark':'light',
+  props.isPaire? 'flex-row-reverse':''
+])
+  
+</script>
+
 <template>
     <div class="longCard">
-        <article class="postcard light blue">
+        <article class="postcard  blue" :class="articleClass">
             <a class="postcard__img_link" href="#">
                 <img
                     class="postcard__img"
