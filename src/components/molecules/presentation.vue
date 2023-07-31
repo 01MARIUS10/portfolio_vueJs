@@ -1,5 +1,5 @@
 <template>
-    <div class="presentation d-flex justify-content-between container-xl  rounded mt-lg-4 mt-xl-5 mb-2 p-lg-3 p-xl-4">
+    <div class="presentation d-flex justify-content-between container-xl  rounded  mb-2 p-xl-0 p-xxl-4">
             <div class="presentation-element">
                 <h2 class="mb-3">Are You in Need of a Skilled Developer?</h2>
                 <p class="hidden-w-900">

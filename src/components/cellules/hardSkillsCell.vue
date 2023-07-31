@@ -10,6 +10,9 @@ let props = defineProps({
         default:false
     }
 })
+let cardClass = ref({
+  'justify-content-end': props.isPaire
+})
 let articleClass = ref([
   (props.theme===1)? 'dark':'light',
   props.isPaire? 'flex-row-reverse':''
@@ -18,7 +21,7 @@ let articleClass = ref([
 </script>
 
 <template>
-    <div class="longCard">
+    <div class="longCard" :class="cardClass">
         <article class="postcard  blue" :class="articleClass">
             <a class="postcard__img_link" href="#">
                 <img
@@ -36,10 +39,7 @@ let articleClass = ref([
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Eligendi, fugiat asperiores inventore beatae accusamus odit
                     minima enim, commodi quia, doloribus eius! Ducimus nemo
-                    accusantium maiores velit corrupti tempora reiciendis
-                    molestiae repellat vero. Eveniet ipsam adipisci illo iusto
-                    quibusdam, sunt neque nulla unde ipsum dolores nobis enim
-                    quidem excepturi, illum quos!
+                    accusantium maiores velit 
                 </div>
                 <ul class="postcard__tagbox">
                     <li class="tag__item">
@@ -75,6 +75,11 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 	color: #ffffff;
 	text-rendering: optimizeLegibility;
 	font-weight: initial;
+  width: 100%;
+  display: flex;
+  article{
+    width: 65%;
+  }
 }
 
 .dark {

@@ -15,8 +15,8 @@ let sectionClass = ref([
 <template>
     <div id="hardSkills">
         <section :class="sectionClass">
-            <div class="container py-2">
-                <hardSkillsCell :isPaire="i%2==0"  v-for="i in 4"/>
+            <div class="container py-2 ">
+                <hardSkillsCell :isPaire="i%2==0"  v-for="i in 4" />
             </div>
         </section>
     </div>
@@ -28,6 +28,7 @@ let sectionClass = ref([
     color: #ffffff;
     text-rendering: optimizeLegibility;
     font-weight: initial;
+    
 }
 
 .dark {
