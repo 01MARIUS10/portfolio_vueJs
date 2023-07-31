@@ -27,7 +27,7 @@
                 <div class="right"></div>
                 <img
                     class="rounded-circle"
-                    src="/image/avatar/avatar5.jpeg"
+                    src="/image/profil/e.webp"
                     alt=""
                 />
             </div>
@@ -73,8 +73,8 @@
         right: 0;
         background: green;
     width: 150px;
-    height: 250px;
-    transform: rotate3d(1, 1, 1, 295deg) translate(0%, 100%);
+    height: 280px;
+    transform: rotate3d(1, 1, 1, 294deg) translate(0%, 100%);
         border-radius: 50%;
         z-index: -2;
     }
@@ -102,11 +102,13 @@
         background: pink;
     width: 113px;
     height: 244px;
-    transform: rotate3d(0, 0, -4, 295deg) translate(-17%, -53%);
+    transform: rotate3d(0, 0, -4, 300deg) translate(0%, -58%);
         border-radius: 50%;
         z-index: -1;
     }
     img{
-    width: 75%;
+    width: 210px;
+    height: auto;
+    background: white;
 }}
 </style>

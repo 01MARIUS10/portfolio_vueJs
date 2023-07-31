@@ -10,8 +10,8 @@ import contact from "@/views/aboutView/contact.vue";
         <div class="nav">
             <div class="d-flex w-100 h-100">
                 <a href="#first">presentation</a>
-                <a href="#second">skills</a>
-                <a href="#projects">project</a>
+                <a href="#second">why us</a>
+                <a href="#projects">projects</a>
                 <a href="#contact">contact</a>
             </div>
         </div>
