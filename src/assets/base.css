@@ -1,4 +1,5 @@
 /* color palette from <https://github.com/vuejs/theme> */
+
 :root {
 
   --violet:#46244c;
@@ -22,4 +23,37 @@
 
   /* --dark: #110f16; */
 
+
+/* ----------------------------------- */
+/* ----------------------------------- */
+/* ----------------------------------- */
+  --bgGris:#F5F5F5;
+  --bgDark:#1B1B1B;
+  --textDark_first:#222;
+  --textDark_second:#525252;
+
+  --textDark_accend:#000000;
+  --textOrange:#DC7000;
+
+  --p1:#46244C;
+  --p2:#712B75;
+  --p3:#C74B50;
+  --p4:#D49B54;
+  --gris:#f5f5f5;
+
+  --f1:#1B2430;
+  --f1pt:#ebeff4;
+  /* --f1st:rgba($color: #ebeff4, $alpha: .6); */
+  /* --f11: */
+  --f2:#51557E;
+  --f3:#816797;
+  --f4:#D6D5A8;
+  /* --f4font: */
+
+
+  --fgray:#D7DFE9;
 }
+
+/* .five{
+  color:#9CAFC7 !important;
+} */

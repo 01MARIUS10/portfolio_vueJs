@@ -1,5 +1,5 @@
 <template>
-    <div id="contact">
+    <div class="contact">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="wrapper">
@@ -172,91 +172,74 @@
 </template>
 
 <style lang="scss" scoped>
-.wrapper {
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 21px 41px -13px;
+.contact{
+    background: var(--bgDark);
+    .wrapper {
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.18) 0px 21px 41px -13px;
+        .no-gutters {
+            margin-right: 0px;
+            margin-left: 0px;
+            #contactForm {
+                .label {
+                  color: rgb(0, 0, 0);
+                  text-transform: uppercase;
+                  font-size: 12px;
+                  font-weight: 600;
+                }
+                .form-control {
+                  font-size: 16px;
+                }
+                .form-control {
+                  border-color: currentcolor currentcolor rgba(0, 0, 0, 0.1);
+                  border-style: none none solid;
+                  border-width: medium medium 1px;
+                  border-image: none 100% / 1 / 0 stretch;
+                  padding: 0px;
+
+                    height: 36px;
+                    font-size: 14px;
+                    border-radius: 2px;
+                    box-shadow: none !important;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+            }
+            .info-wrap{
+                .dbox {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    .icon {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        border: 2px solid rgba(255, 255, 255, 0.2);
+                        span {
+                            font-size: 20px;
+                        }
+                    }
+                    .text {
+                        width: calc(100% - 50px);
+                    }
+                    p {
+                        margin-bottom: 0px;
+                        span {
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+        .no-gutters > .col,
+        .no-gutters > [class*="col-"] {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+    }
 }
-.no-gutters {
-    margin-right: 0px;
-    margin-left: 0px;
-}
-.no-gutters > .col,
-.no-gutters > [class*="col-"] {
-    padding-right: 0px;
-    padding-left: 0px;
-}
-.contact-wrap {
-    background: rgb(255, 255, 255);
-}
-.contactForm .label {
-  color: rgb(0, 0, 0);
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 600;
-}
-#contactForm .form-control {
-  font-size: 16px;
-}
-.contactForm .form-control {
-  border-color: currentcolor currentcolor rgba(0, 0, 0, 0.1);
-  border-style: none none solid;
-  border-width: medium medium 1px;
-  border-image: none 100% / 1 / 0 stretch;
-  padding: 0px;
-}
-.form-control {
-  height: 36px;
-  background: rgb(255, 255, 255);
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 14px;
-  border-radius: 2px;
-  box-shadow: none !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.btn.btn-primary {
-  background: rgb(1, 210, 142) !important;
-  border-color: rgb(1, 210, 142) !important;
-  color: rgb(255, 255, 255);
-}
-.info-wrap {
-  color: rgba(255, 255, 255, 0.8);
-}
-.bg-primary {
-  background: rgb(1, 210, 142) !important;
-}
-.info-wrap h3 {
-  color: rgb(255, 255, 255);
-}
-.info-wrap .dbox {
-  width: 100%;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 20px;
-}
-.info-wrap .dbox .icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-}
-.info-wrap .dbox .icon span {
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-}
+
+
 .fa-map-marker::before {
   content: "\f041";
 }
-.info-wrap .dbox .icon span {
-  font-size: 20px;
-  color: rgb(255, 255, 255);
-}
-.info-wrap .dbox .text {
-  width: calc(100% - 50px);
-}
-.info-wrap .dbox p {
-  margin-bottom: 0px;
-}
-.info-wrap .dbox p span {
-  font-weight: 500;
-  color: rgb(255, 255, 255);
-}
+
 </style>

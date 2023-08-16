@@ -1,0 +1,25 @@
+@media screen and (max-width:1200px){
+    .hidePhon1200{
+      display: none !important;
+    }
+  }
+  @media screen and (max-width:800px){
+    .hidePhon800{
+      display: none !important;
+    }
+  }
+  @media screen and (min-width:800px){
+    .show800{
+      display: none !important;
+    }
+  }
+  @media screen and (max-width:600px){
+    .hidePhon600{
+      display: none !important;
+    }
+  }
+  @media screen and (max-width:400px){
+    .hidePhon400{
+      display: none !important;
+    }
+  }
