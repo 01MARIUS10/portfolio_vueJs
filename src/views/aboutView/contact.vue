@@ -76,14 +76,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="form-group">
-                                                <input
-                                                    type="submit"
-                                                    value="Send Message"
-                                                    class="btn btn-primary"
-                                                />
-                                                <div class="submitting"></div>
-                                            </div>
+                                            <button class="btn"> Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -92,14 +85,14 @@
                         <div
                             class="col-lg-4 col-md-5 d-flex align-items-stretch"
                         >
-                            <div class="info-wrap bg-primary w-100 p-md-5 p-4">
+                            <div class="info-wrap  w-100 p-md-5 p-4">
                                 <h3>Let's get in touch</h3>
                                 <p class="mb-4">
                                     We're open for any suggestion or just to
                                     have a chat
                                 </p>
                                 <div
-                                    class="dbox w-100 d-flex align-items-start"
+                                    class="dbox w-100 "
                                 >
                                     <div
                                         class="icon d-flex align-items-center justify-content-center"
@@ -108,8 +101,8 @@
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
-                                            <span>Address:</span> 198 West 21th
-                                            Street, Suite 721 New York NY 10016
+                                            <span>Address:</span> 
+                                            lot I5 Ambohimarina Alasora
                                         </p>
                                     </div>
                                 </div>
@@ -125,7 +118,7 @@
                                         <p>
                                             <span>Phone:</span>
                                             <a href="tel://1234567920"
-                                                >+ 1235 2355 98</a
+                                                >+ 261 34 99 486 84</a
                                             >
                                         </p>
                                     </div>
@@ -142,7 +135,7 @@
                                         <p>
                                             <span>Email:</span>
                                             <a href="mailto:info@yoursite.com"
-                                                >info@yoursite.com</a
+                                                >mariustsiorimbola@gmail.com</a
                                             >
                                         </p>
                                     </div>
@@ -158,7 +151,7 @@
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
                                             <span>Website</span>
-                                            <a href="#">yoursite.com</a>
+                                            <a href="#">here</a>
                                         </p>
                                     </div>
                                 </div>
@@ -173,13 +166,15 @@
 
 <style lang="scss" scoped>
 .contact{
-    background: var(--bgDark);
     .wrapper {
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.18) 0px 21px 41px -13px;
         .no-gutters {
             margin-right: 0px;
             margin-left: 0px;
+            .contact-wrap{
+                background: var(--f1);
+            }
             #contactForm {
                 .label {
                   color: rgb(0, 0, 0);
@@ -203,11 +198,21 @@
                     box-shadow: none !important;
                     border: 1px solid rgba(0, 0, 0, 0.1);
                 }
+                textarea{
+                    height: auto !important;
+                }
+                .btn{
+                    background: var(--f2);
+                    color: white;
+                }
             }
             .info-wrap{
+                background: var(--f4);
                 .dbox {
                     width: 100%;
                     margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
                     .icon {
                         width: 50px;
                         height: 50px;
@@ -224,6 +229,7 @@
                         margin-bottom: 0px;
                         span {
                             font-weight: 500;
+                            margin:0 5px 0 0;
                         }
                     }
                 }
@@ -242,4 +248,10 @@
   content: "\f041";
 }
 
+@media screen and (max-width:800px){
+    .dbox{
+        margin-bottom: 8px !important;
+
+    }
+}
 </style>

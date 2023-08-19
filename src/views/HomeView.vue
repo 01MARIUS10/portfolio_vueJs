@@ -1,27 +1,25 @@
 <script setup>
-import { RouterLink } from 'vue-router';
-import typeAnimation from '@/components/cellules/typeAnimation.vue'
-import skills from '@/components/molecules/skills.vue';
-
+import { RouterLink } from "vue-router";
+import typeAnimation from "@/components/cellules/typeAnimation.vue";
+import skills from "@/components/molecules/skills.vue";
 </script>
 
 <template>
-    <main >
+    <main>
         <div class="main d-flex align-items-center">
-            <div class="index w-100 mx-xxl-5 ">
+            <div class="index w-100 mx-xxl-5">
                 <div class="presentation">
                     <div class="name">
                         <typeAnimation />
                     </div>
                     <p>
                         Passionate about creating efficient, scalable, and
-                        reliable systems ,
-                        I specialize in the
+                        reliable systems , I specialize in the
                         <span class="accentText">Laravel PHP</span> web
                         framework and <span class="accentText">Vue js</span> ,
                         strive to build seamless processes that enhance the user
-                        experience. 
-                        In addition to my technical expertise, I am also
+                        experience. In addition to my technical expertise, I am
+                        also
                         <span class="accentText"> highly versatile</span> and
                         have a
                         <span class="accentText"
@@ -30,11 +28,11 @@ import skills from '@/components/molecules/skills.vue';
                         Below are the programming languages I work with:
                     </p>
                     <div class="allSkills">
-                      <skills />
+                        <skills />
                     </div>
-                    <div  class="w-100 d-flex goTo">
+                    <div class="w-100 d-flex goTo">
                         <router-link to="/about">
-                            <button >
+                            <button>
                                 <span class="">See more</span>
                                 <img src="/image/arrow-28-24.png" alt="" />
                             </button>
@@ -52,7 +50,6 @@ import skills from '@/components/molecules/skills.vue';
     </main>
 </template>
 <style lang="scss">
-
 // #91593E
 main {
     width: 100vw;
@@ -69,102 +66,98 @@ main {
         box-shadow: inset 1px 1px 16px 0px #8478784d;
         background: rgba(190, 190, 190, 0.22);
         z-index: 1;
-        .presentation{
-          p {
-              color: var(--purple);
-          }
-          a{
-    text-decoration: none;
-}
-          button{
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            background:#46244C;
-            font: 'Garamond, Bodoni, Didot';
-            color: #fff;
-          }
+        .presentation {
+            p {
+                color: var(--purple);
+            }
+            a {
+                text-decoration: none;
+            }
+            button {
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                background: #46244c;
+                font: "Garamond, Bodoni, Didot";
+                color: #fff;
+            }
         }
-        .image{
-          flex-grow: 1;
-          max-width: 400px;
-          img{
-              width: 100%;
-          }
+        .image {
+            flex-grow: 1;
+            max-width: 400px;
+            img {
+                width: 100%;
+            }
         }
     }
 }
-@media screen and (max-width:2800px){
-    main{
-        .main{
-
+@media screen and (max-width: 2800px) {
+    main {
+        .main {
             padding: 30px;
-        top: 30px;
-        bottom: 30px;
-        left: 50px;
-        right: 50px;
+            top: 30px;
+            bottom: 30px;
+            left: 50px;
+            right: 50px;
         }
-        .index{
+        .index {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            .presentation{
+            .presentation {
                 width: 60%;
                 min-width: 600px;
             }
 
-          button{
-            padding: 15px 22px;
-            font-size: 18px;
-          }
+            button {
+                padding: 15px 22px;
+                font-size: 18px;
+            }
         }
-        
     }
 }
-@media screen and (max-width:800px){
-    main{
-        .main{
-
+@media screen and (max-width: 800px) {
+    main {
+        .main {
             padding: 15px;
-        top: 10px;
-        bottom: 10px;
-        left: 12px;
-        right: 12px;
+            top: 10px;
+            bottom: 10px;
+            left: 12px;
+            right: 12px;
         }
-        .index{
+        .index {
             display: flex;
             flex-direction: column-reverse;
             justify-content: center;
             align-items: center;
-            gap:5vh;
-            .presentation{
+            gap: 5vh;
+            .presentation {
                 flex-grow: 1;
                 width: 100%;
                 min-width: 200px;
-                .allSkills{
+                .allSkills {
                     display: none;
                 }
             }
-            .image ,.image img{
+            .image,
+            .image img {
                 height: 28vh;
             }
-            .image img{
+            .image img {
                 width: auto;
             }
-            p,h1{
+            p,
+            h1 {
                 text-align: center;
             }
-            .goTo{
+            .goTo {
                 justify-content: center;
             }
-            button{
-                padding:6px 10px;
+            button {
+                padding: 6px 10px;
                 font-size: 15px;
-
             }
         }
     }
 }
-
-
 </style>

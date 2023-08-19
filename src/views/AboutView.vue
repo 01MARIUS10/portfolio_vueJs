@@ -65,6 +65,9 @@ $nav:80px;
     #myProjects{
         background: var(--bgGris);
     }
+    .content-scroll{
+        min-width: 100%;
+    }
 }
 .show {
     border: solid 3px red;
