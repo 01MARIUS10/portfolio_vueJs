@@ -16,7 +16,7 @@
                                     class="contactForm"
                                 >
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 pb-3">
                                             <div class="form-group">
                                                 <label class="label" for="name"
                                                     >Full Name</label
@@ -30,7 +30,7 @@
                                                 />
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-6 mb-3">
                                             <div class="form-group">
                                                 <label class="label" for="email"
                                                     >Email Address</label
@@ -44,7 +44,7 @@
                                                 />
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <div class="form-group">
                                                 <label
                                                     class="label"
@@ -60,7 +60,7 @@
                                                 />
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <div class="form-group">
                                                 <label class="label" for="#"
                                                     >Message</label
@@ -75,7 +75,7 @@
                                                 ></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <button class="btn"> Submit</button>
                                         </div>
                                     </div>
@@ -95,7 +95,7 @@
                                     class="dbox w-100 "
                                 >
                                     <div
-                                        class="icon d-flex align-items-center justify-content-center"
+                                        class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
                                         <span class="fa fa-map-marker"></span>
                                     </div>
@@ -110,7 +110,7 @@
                                     class="dbox w-100 d-flex align-items-center"
                                 >
                                     <div
-                                        class="icon d-flex align-items-center justify-content-center"
+                                        class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
                                         <span class="fa fa-phone"></span>
                                     </div>
@@ -127,7 +127,7 @@
                                     class="dbox w-100 d-flex align-items-center"
                                 >
                                     <div
-                                        class="icon d-flex align-items-center justify-content-center"
+                                        class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
                                         <span class="fa fa-paper-plane"></span>
                                     </div>
@@ -144,14 +144,14 @@
                                     class="dbox w-100 d-flex align-items-center"
                                 >
                                     <div
-                                        class="icon d-flex align-items-center justify-content-center"
+                                        class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
                                         <span class="fa fa-globe"></span>
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
-                                            <span>Website</span>
-                                            <a href="#">here</a>
+                                            <span>linkedIn : </span>
+                                            <a href="https://www.linkedin.com/in/razafitsalama-marius-08517b227/">Razafitsalama Marius</a>
                                         </p>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
             margin-right: 0px;
             margin-left: 0px;
             .contact-wrap{
-                background: var(--f1);
+                background: var(--f4);
             }
             #contactForm {
                 .label {
@@ -207,7 +207,8 @@
                 }
             }
             .info-wrap{
-                background: var(--f4);
+                background: var(--f1);
+                color:var(--f1pt);
                 .dbox {
                     width: 100%;
                     margin-bottom: 20px;

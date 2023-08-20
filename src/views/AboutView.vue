@@ -16,6 +16,22 @@ provide('navState',navigationState)
 </script>
 <template>
     <div class="about">
+        <div class="debugColor">
+                <ul class="d-flex p-0 m-0">
+                    <li>
+                        <span>#1B2430</span>
+                        <span style="background-color:#1B2430 ;"></span>
+                    </li>
+                    <li>
+                        <span>#51557E</span>
+                        <span style="background-color:#51557E ;"></span>
+                    </li>
+                    <li>
+                        <span>#D6D5A8</span>
+                        <span style="background-color:#D6D5A8 ;"></span>
+                    </li>
+                </ul>
+        </div>
         <div class="navig">
             <navigation />
         </div>
@@ -40,8 +56,32 @@ provide('navState',navigationState)
 
 <style  lang="scss">
 $nav:80px;
+
 .about {
     position: relative;
+    .debugColor{
+        position: fixed;
+        bottom:20px;
+        right:20px;
+        // min-width:100px;
+        // min-height: 300px;
+        background: white;
+        box-shadow: 0px 0px 20px 5px black;
+        
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding:5px 10px;
+            span:nth-child(2){
+                width:80px;
+                height: 80px;
+                display: block;
+                border-radius: 50%;
+            }
+        }
+    }
     .navig {
         display: flex;
         z-index: 999;
@@ -70,7 +110,7 @@ $nav:80px;
     }
 }
 .show {
-    border: solid 3px red;
+    // border: solid 3px red;
     // height: 100vh;
     // width: 100vw;
     padding:65px 100px 65px calc(100px + $nav);
@@ -86,7 +126,7 @@ border: solid 2px grey;
 height: 100%;
 }
 .show>div>div{
-border: solid 2px red;
+// border: solid 2px red;
 }
 
 
@@ -103,6 +143,9 @@ border: solid 2px red;
         left: 0;
         bottom: 0;
         right: calc(100vw - $nav);
+    }
+    #contact{
+        padding-left: $nav;
     }
 }
 
@@ -149,6 +192,9 @@ border: solid 2px red;
         // height: calc(100vh - $nav);
         height: 100%;
         width: 100vw;
+    }
+    #contact{
+        padding:0 !important;
     }
 }
 

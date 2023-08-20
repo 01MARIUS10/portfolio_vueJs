@@ -56,6 +56,9 @@ Dedicated and passionate about coding development, my approach is driven by an i
     .myProjects_head{
         height: 25vh;
         margin: 6vh 8vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
     .myProjects_content{
         position: relative;

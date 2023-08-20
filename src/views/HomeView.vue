@@ -91,7 +91,7 @@ main {
         }
     }
 }
-@media screen and (max-width: 2800px) {
+@media screen and (max-width: 3200px) {
     main {
         .main {
             padding: 30px;

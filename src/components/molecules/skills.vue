@@ -10,27 +10,17 @@ let props = defineProps({
     },
 });
 const images = ref([
-    { name: "html", src: "/image/skills/html.png" },
-    { name: "css", src: "/image/skills/css.png" },
     { name: "js", src: "/image/skills/js.png" },
+    { name: "nodejs", src: "/image/skills/nodejs.png" },
+    { name: "angular", src: "/image/skills/angular.png" },
     { name: "php", src: "/image/skills/php.png" },
     { name: "vue js", src: "/image/skills/vuejs.png" },
     { name: "Laravel", src: "/image/skills/laravel.png" },
-    { name: "css", src: "/image/skills/css.png" },
-    { name: "js", src: "/image/skills/js.png" },
-    { name: "php", src: "/image/skills/php.png" },
-    { name: "vue js", src: "/image/skills/vuejs.png" },
-    { name: "Laravel", src: "/image/skills/laravel.png" },
-    { name: "css", src: "/image/skills/css.png" },
-    { name: "js", src: "/image/skills/js.png" },
-    { name: "php", src: "/image/skills/php.png" },
-    { name: "vue js", src: "/image/skills/vuejs.png" },
-    { name: "Laravel", src: "/image/skills/laravel.png" },
-]);
+    ]);
 </script>
 <template>
     <div class="skills p-xxl-4 d-flex w-100 h-100">
-        <skill v-if="props.min" v-for="i in 5" :image="images[i].src" />
+        <skill v-if="props.min" v-for="skill in images" :image="skill.src" />
         <div v-else class="w-100 d-flex h-100">
             <h1 class="h2 my-5">Skills overViews :</h1>
             <div class="d-flex justify-content-center align-items-center h-100 flex-grow-1">

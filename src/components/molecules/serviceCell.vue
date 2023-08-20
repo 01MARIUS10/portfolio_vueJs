@@ -22,7 +22,7 @@ let props = defineProps({
                 <li v-for=" q in props.service.qualite">{{ q.title }}</li>
             </ul>
             <div class="asking hidePhon1200">
-                <button class="btn btn-primary">
+                <button class="btn">
                     <a href="#contact"> Discuter </a>
                 </button>
             </div>
@@ -36,7 +36,13 @@ let props = defineProps({
     display: flex;
     height: 100%;
     flex-direction: column;
-    border: solid 2px blue;
+    align-items: center;
+    // border: solid 2px var(--f1);
+    // box-shadow: 0px 0px 5px 2px #1B2430;
+    box-shadow:inset 0px 0px 15px 0px #51557E;
+    // box-shadow: 0px 1px 5px 2px var(--f1);
+
+    // background: rgba($color: #D6D5A8, $alpha: 1);
     .serviceCell_image {
         // width: 50%;
         margin-bottom: 5px;
@@ -81,12 +87,25 @@ let props = defineProps({
                 color: white;
                 text-decoration: none;
             }
+            button{
+                background:var(--f1) !important;
+            }
         }
     }
 }
-@media screen and (max-width:2800px){
+@media screen and (max-width:3200px){
     .serviceCell_image {
         width: 50%;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .serviceCell {
+        padding: 15px 20px;
+        .serviceCell_content {
+            .text {
+            line-height: 22px !important;
+        }
+        }
     }
 }
 @media screen and (max-width: 1200px) {
@@ -101,6 +120,9 @@ let props = defineProps({
         }
         .serviceCell_content {
             flex-grow: 1;
+            .text {
+            line-height: 21px !important;
+        }
         }
     }
 }

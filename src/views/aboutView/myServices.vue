@@ -101,7 +101,7 @@ let services = ref([
     <div class="myServices">
         <div class="myService_head ">
             <div class="text ps-4">
-                <p class="h3 firstText ">Mes services</p>
+                <p class="h3 firstText ">Quels services je vous propose ?</p>
                 <p class="textLabel hidePhon400">Découvrez ci-dessous les services que je propose pour vous accompagner dans la réalisation de vos projets web.</p>
             </div>
             <img src="/image/profil/361237407_3659592854272783_9182702132017054179_n.webp" alt="">
@@ -148,10 +148,11 @@ let services = ref([
     }
     .myServices_content{
         width:100%;
+        min-height: 50%;
     }
 }
 
-@media screen and (max-width:2800px){
+@media screen and (max-width:3200px){
     .myServices_content{
         display: flex;
         gap:10px;
@@ -161,7 +162,7 @@ let services = ref([
     .myServices{
         padding-top: 0;
         gap:0;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     .myServices_content{
         display: grid;
