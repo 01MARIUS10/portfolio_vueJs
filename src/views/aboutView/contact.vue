@@ -176,6 +176,9 @@
                 background: var(--f4);
             }
             #contactForm {
+                input,textarea{
+                    padding: 5px !important;
+                }
                 .label {
                   color: rgb(0, 0, 0);
                   text-transform: uppercase;
@@ -202,13 +205,16 @@
                     height: auto !important;
                 }
                 .btn{
-                    background: var(--f2);
+                    background: var(--f1);
                     color: white;
                 }
             }
             .info-wrap{
                 background: var(--f1);
                 color:var(--f1pt);
+                a{
+                    color:var(--f1pt);
+                }
                 .dbox {
                     width: 100%;
                     margin-bottom: 20px;
