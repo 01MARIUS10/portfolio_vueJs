@@ -102,7 +102,7 @@ let services = ref([
         <div class="myService_head ">
             <div class="text ps-4">
                 <p class="h3 firstText ">Quels services je vous propose ?</p>
-                <p class="textLabel hidePhon400">Découvrez ci-dessous les services que je propose pour vous accompagner dans la réalisation de vos projets web.</p>
+                <p class="accentSecondText hidePhon400">Découvrez ci-dessous les services que je propose pour vous accompagner dans la réalisation de vos projets web.</p>
             </div>
             <img src="/image/profil/361237407_3659592854272783_9182702132017054179_n.webp" alt="">
         </div>

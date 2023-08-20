@@ -53,18 +53,18 @@ let breakpoints = reactive({
                             elit. Hic nam omnis amet nihil recusandae blanditiis
                             accusamus accusantium aspernatur enim, nulla dolor?
                         </p>
-                        <div class="technologie hidePhon600">
+                        <!-- <div class="technologie hidePhon600">
                             <span>Technologie:</span>
                             <div class="technologie_list">
                                 <p>
                                     <img src="/image/skills/vuejs.png" alt="" />
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <p class="slide_link">
+                        <!-- <p class="slide_link">
                             <a href="#" target="_blank">{{ i }} - see more</a>
-                        </p>
+                        </p> -->
                     </figcaption>
                 </figure>
             </Slide>
@@ -116,6 +116,9 @@ figure {
     .slide_link {
         text-align: right;
         padding: 0 50px;
+        a{
+            color:var(--f4)
+        }
     }
 }
 .technologie {
@@ -141,13 +144,16 @@ figure {
         }
     }
 }
+.carousel__pagination{
+    margin-top: 20px;
+}
 .carousel__pagination-button::after {
     height: 15px;
-    width: 15px;
-    border-radius: 10px;
+    width: 30px;
+    border-radius: 15px;
 }
 .carousel__pagination-button--active::after {
-    width: 45px;
+    width: 65px;
     border-radius: 10px;
 }
 </style>

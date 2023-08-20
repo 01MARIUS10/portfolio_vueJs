@@ -104,7 +104,8 @@ $nav:80px;
         background:#fff;
     }
     #myProjects{
-        background: var(--bgGris);
+        // background: var(--bgGris);
+        background: rgba($color: #1B2430, $alpha: .1);
     }
     .content-scroll{
         min-width: 100%;

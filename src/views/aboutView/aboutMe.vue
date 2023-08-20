@@ -2,7 +2,7 @@
     <div class="aboutMe">
         <div class="aboutMe_content ">
             <h1 class="firstText one">About Me</h1>
-            <p class="aboutMe_text accentSecondText ">Je suis un développeur Fullstack PHP , spécialisé actuellement sur Laravel et Vue.js.
+            <p class="aboutMe_text textAboutContent ">Je suis un développeur Fullstack PHP , spécialisé actuellement sur Laravel et Vue.js.
                  Passionné par la technologies web, 
 
 
