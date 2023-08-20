@@ -61,6 +61,7 @@ $nav:80px;
     position: relative;
     .debugColor{
         position: fixed;
+        z-index: 9999;
         bottom:20px;
         right:20px;
         // min-width:100px;
