@@ -30,3 +30,11 @@ export default {
         </h1>
     </div>
 </template>
+
+<style lang="scss">
+@media screen and (max-width:600px){
+    h1{
+        font-size: 18px;
+    }
+}
+</style>

@@ -2,6 +2,12 @@
 import { RouterLink } from "vue-router";
 import typeAnimation from "@/components/cellules/typeAnimation.vue";
 import skills from "@/components/molecules/skills.vue";
+import { computed } from "vue";
+let debugScreen = computed(()=>{
+    let screenSize = `${window.innerWidth} | ${window.innerHeight}`
+    console.log(screenSize)
+    return (window.innerWidth<800)? screenSize:''
+})
 </script>
 
 <template>
@@ -13,7 +19,7 @@ import skills from "@/components/molecules/skills.vue";
                         <typeAnimation />
                     </div>
                     <p>
-                        Passionate about creating efficient, scalable, and
+                       {{ debugScreen }} Passionate about creating efficient, scalable, and
                         reliable systems , I specialize in the
                         <span class="accentText">Laravel PHP</span> web
                         framework and <span class="accentText">Vue js</span> ,
@@ -49,7 +55,7 @@ import skills from "@/components/molecules/skills.vue";
         </div>
     </main>
 </template>
-<style lang="scss">
+<style lang="scss" >
 // #91593E
 main {
     width: 100vw;
@@ -69,8 +75,6 @@ main {
         .presentation {
             p {
                 color: var(--purple);
-                letter-spacing: 1px;
-                font-size: 1.3rem;
             }
             a {
                 text-decoration: none;
@@ -106,6 +110,12 @@ main {
             bottom: 30px;
             left: 50px;
             right: 50px;
+            .presentation{
+                p{
+                letter-spacing: 1px;
+                font-size: 1.3rem;
+                }
+            }
         }
         .index {
             display: flex;
@@ -163,6 +173,17 @@ main {
             button {
                 padding: 6px 10px;
                 font-size: 15px;
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    main{
+        .main{
+            .presentation{
+                p{
+                    font-size: .9rem;
+                }
             }
         }
     }
