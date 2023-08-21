@@ -11,7 +11,7 @@ let props = defineProps({
 </script>
 
 <template>
-    <div class="serviceCell">
+    <div class="serviceCell sombre">
         <div class="serviceCell_image">
             <img :src="props.service.img" alt="" />
         </div>
@@ -37,6 +37,7 @@ let props = defineProps({
     height: 100%;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     // border: solid 2px var(--f1);
     // box-shadow: 0px 0px 5px 2px #1B2430;
     box-shadow:inset 0px 0px 15px 0px #51557E;
@@ -89,6 +90,25 @@ let props = defineProps({
             }
             button{
                 background:var(--f1) !important;
+            }
+        }
+    }
+}
+.sombre{
+    background: rgb(27, 36, 48);
+    .serviceCell_content{
+        span{
+            color:white !important;
+        }
+        p{
+            color: rgba(255,255,255,.3) !important;
+        }
+        .asking{
+            button{
+                // background: rgba(81, 85, 126, .2) !important;
+                // box-shadow: 0 0 2px .1px #fff;
+                background: rgba(27, 36, 48, 0.8) !important;
+                box-shadow: 0 0 3px .1px #fff;
             }
         }
     }

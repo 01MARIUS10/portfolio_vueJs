@@ -21,14 +21,17 @@ provide('navState',navigationState)
                     <li>
                         <span>#1B2430</span>
                         <span style="background-color:#1B2430 ;"></span>
+                        <span>rgba(27, 36, 48, 1)</span>
                     </li>
                     <li>
                         <span>#51557E</span>
                         <span style="background-color:#51557E ;"></span>
+                        <span>rgba(81, 85, 126, 1)</span>
                     </li>
                     <li>
                         <span>#D6D5A8</span>
                         <span style="background-color:#D6D5A8 ;"></span>
+                        <span>rgba(214, 213, 168, 1)</span>
                     </li>
                 </ul>
         </div>
@@ -105,7 +108,7 @@ $nav:80px;
     }
     #myProjects{
         // background: var(--bgGris);
-        background: rgba($color: #1B2430, $alpha: .1);
+        background: rgba($color: #51557E, $alpha: .1);
     }
     .content-scroll{
         min-width: 100%;
