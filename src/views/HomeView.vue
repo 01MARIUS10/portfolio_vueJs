@@ -9,7 +9,7 @@ import skills from "@/components/molecules/skills.vue";
         <div class="main d-flex align-items-center">
             <div class="index w-100 mx-xxl-5">
                 <div class="presentation">
-                    <div class="name">
+                    <div class="name mb-4">
                         <typeAnimation />
                     </div>
                     <p>
@@ -69,6 +69,8 @@ main {
         .presentation {
             p {
                 color: var(--purple);
+                letter-spacing: 1px;
+                font-size: 1.3rem;
             }
             a {
                 text-decoration: none;
@@ -80,6 +82,11 @@ main {
                 background: #46244c;
                 font: "Garamond, Bodoni, Didot";
                 color: #fff;
+            }
+            .goTo{
+                img{
+                    margin:0 5px;
+                }
             }
         }
         .image {

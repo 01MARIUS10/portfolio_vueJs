@@ -19,7 +19,7 @@ const images = ref([
     ]);
 </script>
 <template>
-    <div class="skills p-xxl-4 d-flex w-100 h-100">
+    <div class="skills pb-xxl-4 d-flex w-100 h-100">
         <skill v-if="props.min" v-for="skill in images" :image="skill.src" />
         <div v-else class="w-100 d-flex h-100">
             <h1 class="h2 my-5">Skills overViews :</h1>
@@ -49,49 +49,7 @@ const images = ref([
     </div>
 </template>
 <style scoped lang="scss">
-//input
-// $widthCell:100px;
-// $heightCell:calc($widthCell * 1.4);
-// $mbCell:10px;
 
-// $sqr2:1.4142;
-// $w:calc($heightCell / $sqr2);
-// $h: calc($heightCell / $sqr2);
-
-// $ws2 : calc($widthCell / 2);
-// $hs2 : calc($heightCell / 2);
-
-// $pbCs2: calc($mbCell / 2);
-
-// .el{
-//     margin-left:calc($widthCell / 2);
-//     margin-right:calc($heightCell / 2);
-//     width: calc($widthCell * 6);
-
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-//     //gap for the 100px width 
-
-//     $b : calc($mbCell / 2);
-//     $c : $mbCell + $b;
-//     gap:calc($ws2 - $c);
-// }
-// .el>div{
-//     //DEBUG DEBUG DEBUG
-//     // border:solid 5px rgb(114, 106, 106);
-//     //not responsive
-//     //wh+10px
-//     width: calc($widthCell + $ws2);
-// }
-// .el>div>*{
-//     //it is the 10px
-//     margin-bottom:2* $mbCell;
-// }
-// .el>div:nth-child(2n){
-//     $b : calc($mbCell / 2);
-//     $a : $pbCs2 + $b;
-//     padding-top:calc($hs2 + $a);
-// }
 
 
 // @media  screen and (max-width:1600px) {

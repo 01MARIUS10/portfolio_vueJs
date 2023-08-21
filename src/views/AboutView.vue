@@ -201,6 +201,17 @@ height: 100%;
     #contact{
         padding:0 !important;
     }
+    .debugColor{
+        li {
+            padding:2px 5px;
+            span:nth-child(2){
+                width:30px;
+                height: 30px;
+                display: block;
+                border-radius: 50%;
+            }
+        }
+    }
 }
 
 // @media screen and (max-width: 900px){

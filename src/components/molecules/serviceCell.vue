@@ -11,7 +11,7 @@ let props = defineProps({
 </script>
 
 <template>
-    <div class="serviceCell sombre">
+    <div class="serviceCell sombre" @hover="console.log('hiii')">
         <div class="serviceCell_image">
             <img :src="props.service.img" alt="" />
         </div>
@@ -59,7 +59,6 @@ let props = defineProps({
         flex-direction: column;
         margin-bottom: 0px;
         .title {
-            color: #000;
             font-family: Poppins;
             font-size: 16px;
             font-style: normal;
@@ -70,7 +69,6 @@ let props = defineProps({
             font-size: 16px;
         }
         .text {
-            color: var(--textDark_second);
             /* text-align: center; */
             font-family: Poppins;
             font-size: 14px !important;
@@ -85,11 +83,7 @@ let props = defineProps({
             align-items: end;
             flex-grow: 1;
             a {
-                color: white;
                 text-decoration: none;
-            }
-            button{
-                background:var(--f1) !important;
             }
         }
     }
@@ -98,21 +92,55 @@ let props = defineProps({
     background: rgb(27, 36, 48);
     .serviceCell_content{
         span{
-            color:white !important;
+            color:white ;
         }
-        p{
-            color: rgba(255,255,255,.3) !important;
+        p,ul{
+            color: rgba(255,255,255,.3) ;
         }
         .asking{
             button{
                 // background: rgba(81, 85, 126, .2) !important;
                 // box-shadow: 0 0 2px .1px #fff;
-                background: rgba(27, 36, 48, 0.8) !important;
+                background: rgba(27, 36, 48, 0.8) ;
                 box-shadow: 0 0 3px .1px #fff;
+                a{
+                    color:white;
+                }
             }
         }
     }
+    &:hover{
+        transform: scale(1.1);
+    }
 }
+    .sombre:hover,.clair{
+        box-shadow:inset 0px 0px 15px 0px #51557E;
+        background: white;
+        .serviceCell_content {
+            span{
+                color:#000;
+
+            }
+            p{
+                color:#000;
+
+            }
+            .title{
+                color: #000;
+            }
+            .text {
+                color: var(--textDark_second);
+            }
+            .asking{
+                button{
+                    background:var(--f1) ;
+                    a{
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
 @media screen and (max-width:3200px){
     .serviceCell_image {
         width: 50%;
