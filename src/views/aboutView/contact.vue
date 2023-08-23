@@ -1,7 +1,8 @@
 <script setup>
 
 import { reactive  } from 'vue';
-const url = 'http://localhost:8000'
+// const url = 'http://localhost:8000'
+const url = 'http://01marius10-api.000.pe/sendMail/index.php'
 // const url = 'https://pizzerialaravel.000webhostapp.com/'
 //9DAsT4Bhpsm 
 let form = reactive({
@@ -49,6 +50,7 @@ const submitForm = ()=>{
         fetch(url,{
                method:'POST',
                body:JSON.stringify({...form}),
+               mode: 'cors',
                headers:{
                    'Content-Type':'application/json',
                }
