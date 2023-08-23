@@ -1,8 +1,9 @@
 <script setup>
 
-import { reactive  } from 'vue';
+import { reactive,ref  } from 'vue';
+import emailjs from '@emailjs/browser';
 // const url = 'http://localhost:8000'
-const url = 'http://01marius10-api.000.pe/sendMail/index.php'
+// const url = 'http://01marius10-api.000.pe/sendMail/index.php'
 // const url = 'https://pizzerialaravel.000webhostapp.com/'
 //9DAsT4Bhpsm 
 let form = reactive({
@@ -43,22 +44,18 @@ const initForm = ()=>{
     form.subject=''
     form.message=''
 }
-
+let formRef = ref('')
 const submitForm = ()=>{
-    console.log(JSON.stringify({...form}))
+    console.log("send ...")
+
     if(isValidate()){
-        fetch(url,{
-               method:'POST',
-               body:JSON.stringify({...form}),
-               mode: 'cors',
-               headers:{
-                   'Content-Type':'application/json',
-               }
-           })
-           .then(response => response.json())
-           .then(data => console.log('response', data))
-           .catch(e=>console.log(e))
-       initForm()
+        emailjs.sendForm("service_mpjkp5l", "template_kjn5jty", formRef.value, "8c7YCi1q_9ViT92Tn")
+        .then((result) => {
+            console.log('SUCCESS!', result.text);
+        }, (error) => {
+            console.log('FAILED...', error.text);
+        });
+        initForm()
     }
 }
 </script>
@@ -80,6 +77,7 @@ const submitForm = ()=>{
                                     name="contactForm"
                                     class="contactForm"
                                     @submit.prevent="submitForm"
+                                    ref="formRef"
                                 >
                                     <div class="row">
                                         <div class="col-md-6 pb-3">

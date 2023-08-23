@@ -1,21 +1,25 @@
 
 <script setup>
 import { inject } from 'vue';
-// import { RouterLink } from 'vue-router';
+
+let props = defineProps({
+    item:{
+        default:0
+    }
+}
+)
 let navState = inject('navState')
 function activeClass(i){
-    return navState.state==i? 'active':''
+    return props.item==i? 'active':''
 }
-function setNavState(i){
-    navState.state=i
-}
+
 </script>
 <template>
         <div class="d-flex w-100 h-100 navigation">
-                <a :class="activeClass(0)" @click='setNavState(0)' href="#aboutMe"></a>
-                <a :class="activeClass(1)" @click='setNavState(1)' href="#myService"></a>
-                <a :class="activeClass(2)" @click='setNavState(2)' href="#myProjects"></a>
-                <a :class="activeClass(3)" @click='setNavState(3)' href="#contact"></a>
+                <a :class="activeClass(0)"  href="#aboutMe"></a>
+                <a :class="activeClass(1)"  href="#myService"></a>
+                <a :class="activeClass(2)"  href="#myProjects"></a>
+                <a :class="activeClass(3)"  href="#contact"></a>
         </div>
 </template>
 

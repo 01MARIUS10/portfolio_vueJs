@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "host":"vite --host",
+    "host": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "bootstrap": "^5.3.1",
     "bootstrap-vue": "^2.23.1",
     "sass": "^1.64.1",
