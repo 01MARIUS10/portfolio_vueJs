@@ -31,11 +31,10 @@ let debugScreen = computed(()=>{
                         <span class="accentText"
                             >strong ability to work well within a team.</span
                         >
-                        Below are the programming languages I work with:
                     </p>
-                    <div class="allSkills">
+                    <!-- <div class="allSkills">
                         <skills />
-                    </div>
+                    </div> -->
                     <div class="w-100 d-flex goTo">
                         <router-link to="/about">
                             <button>
@@ -60,6 +59,7 @@ let debugScreen = computed(()=>{
 main {
     width: 100vw;
     height: 100vh;
+
     background: linear-gradient(237deg, #46244c, rgba(255, 0, 0, 0) 70.71%),
         linear-gradient(147deg, #86492bed, rgba(0, 255, 0, 0) 70.71%),
         linear-gradient(356deg, #1b2430, rgba(0, 0, 255, 0) 70.71%);
@@ -75,6 +75,7 @@ main {
         .presentation {
             p {
                 color: var(--purple);
+                // font-family: "Roboto" , sans-serif !important;
             }
             a {
                 text-decoration: none;

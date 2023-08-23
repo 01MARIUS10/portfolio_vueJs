@@ -3,7 +3,7 @@ let props = defineProps({
     service: {
         default: {
             title: "Lorem ipsum dolor ",
-            label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. it amet consectetur it amet consectetur adipisicing elit. adipisicing elit. it amet consectetur adipisicing elit. Repellat ab doloribus sapiente!",
+            label: "Lorem ipsum dolor sit amet consectetur adipisicing elit ab doloribus sapiente!",
             img: "/image/autonomie.png",
         },
     },
@@ -15,50 +15,29 @@ let props = defineProps({
         <div class="serviceCell_image">
             <img :src="props.service.img" alt="" />
         </div>
-        <div class="serviceCell_content">
-            <span class="title">{{ props.service.title }}</span>
-            <p class="text hidePhon800">{{ props.service.label }}</p>
-            <ul class="show800">
-                <li v-for=" q in props.service.qualite">{{ q.title }}</li>
-            </ul>
-            <div class="asking hidePhon1200">
-                <button class="btn">
-                    <a href="#contact"> Discuter </a>
-                </button>
-            </div>
+        <span class="serviceCell_title">{{ props.service.title }}</span>
+        <p class="serviceCell_text hidePhon800">{{ props.service.label }}</p>
+        <ul class="show800">
+            <li v-for=" q in props.service.qualite">{{ q.title }}</li>
+        </ul>
+        <div class="asking hidePhon1200">
+            <button class="btn">
+                <a href="#contact"> Discuter </a>
+            </button>
         </div>
     </div>
 </template>
 
 <style lang="scss">
 .serviceCell {
-    padding: 15px 35px;
-    display: flex;
+    padding: 20px;
+    display: grid;
     height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // border: solid 2px var(--f1);
-    // box-shadow: 0px 0px 5px 2px #1B2430;
     box-shadow:inset 0px 0px 15px 0px #51557E;
-    // box-shadow: 0px 1px 5px 2px var(--f1);
-
-    // background: rgba($color: #D6D5A8, $alpha: 1);
     .serviceCell_image {
-        // width: 50%;
         margin-bottom: 5px;
-        img {
-            height: auto;
-            width: 100%;
-        }
     }
-    .serviceCell_content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-bottom: 0px;
-        .title {
+        .serviceCell_title {
             font-family: Poppins;
             font-size: 16px;
             font-style: normal;
@@ -68,9 +47,7 @@ let props = defineProps({
             padding-bottom: 0 !important;
             font-size: 16px;
         }
-        .text {
-            /* text-align: center; */
-            font-family: Poppins;
+        .serviceCell_text {
             font-size: 14px !important;
             font-style: normal !important;
             font-weight: 400 !important;
@@ -86,21 +63,17 @@ let props = defineProps({
                 text-decoration: none;
             }
         }
-    }
 }
 .sombre{
     background: rgb(27, 36, 48);
-    .serviceCell_content{
         span{
             color:white ;
         }
         p,ul{
-            color: rgba(255,255,255,.3) ;
+            color: rgba(255,255,255,.6) ;
         }
         .asking{
             button{
-                // background: rgba(81, 85, 126, .2) !important;
-                // box-shadow: 0 0 2px .1px #fff;
                 background: rgba(27, 36, 48, 0.8) ;
                 box-shadow: 0 0 3px .1px #fff;
                 a{
@@ -108,15 +81,13 @@ let props = defineProps({
                 }
             }
         }
-    }
     &:hover{
-        transform: scale(1.1);
+        transform: scale(.95);
     }
 }
     .sombre:hover,.clair{
-        box-shadow:inset 0px 0px 15px 0px #51557E;
+        box-shadow: 0px 0px 15px 0px #51557E;
         background: white;
-        .serviceCell_content {
             span{
                 color:#000;
 
@@ -125,10 +96,10 @@ let props = defineProps({
                 color:#000;
 
             }
-            .title{
+            .serviceCell_title{
                 color: #000;
             }
-            .text {
+            .serviceCell_text {
                 color: var(--textDark_second);
             }
             .asking{
@@ -139,20 +110,31 @@ let props = defineProps({
                     }
                 }
             }
-        }
     }
 @media screen and (max-width:3200px){
+    .serviceCell {
+        grid-template-rows: 105px 30px 90px 40px;
+    }
     .serviceCell_image {
-        width: 50%;
+        display: flex;
+        justify-content: center;
+        img{
+            height: 105px;
+            width: auto;
+        }
+    }
+    .serviceCell_title{
+        text-align: center;
+    }
+    .serviceCell_text{
+        padding: 0 5px;;
     }
 }
 @media screen and (max-width: 1500px) {
     .serviceCell {
         padding: 15px 20px;
-        .serviceCell_content {
-            .text {
+            .serviceCell_text {
             line-height: 22px !important;
-        }
         }
     }
 }
@@ -160,23 +142,37 @@ let props = defineProps({
     .serviceCell {
         display: flex;
         flex-direction: row;
-        padding: 10px 15px;
+        justify-content: space-around;
+        padding: 15px;
         .serviceCell_image {
             display: flex;
             align-items: center;
             width: 30%;
         }
-        .serviceCell_content {
-            flex-grow: 1;
-            .text {
+            .serviceCell_text {
             line-height: 21px !important;
-        }
         }
     }
 }
 @media screen and (max-width: 600px) {
     .serviceCell {
         padding: 5px 8px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .serviceCell_image {
+            width: 100%;
+            height: 45%;
+            justify-content: center;
+            img{
+                width: auto;
+                height: 100%;
+                max-width: 100%;
+            }
+        }
+            ul{
+                padding: 0;
+            }
     }
 }
 </style>

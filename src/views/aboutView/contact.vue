@@ -1,3 +1,66 @@
+<script setup>
+
+import { reactive  } from 'vue';
+const url = 'http://localhost:8000'
+// const url = 'https://pizzerialaravel.000webhostapp.com/'
+//9DAsT4Bhpsm 
+let form = reactive({
+    name:'',
+    email:'',
+    subject:'',
+    message:''
+})
+let validation = reactive({
+    name:true,
+    email:true,
+    subject:true,
+    message:true
+}) 
+const emailValidation = (e)=>{
+    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    return regex.test(e)
+}
+const trimFormValue = () =>{
+    form.name =    form.name.trim()
+    form.email =   form.email.trim()
+    form.subject = form.subject.trim()
+    form.message = form.message.trim()
+}
+
+const isValidate = ()=>{
+    trimFormValue()
+    validation.name = (form.name=='')? false:true
+    validation.email = emailValidation(form.email) ? true:false
+    validation.subject = (form.subject=='')? false:true
+    validation.message = (form.message=='')? false:true
+
+    return ( validation.name && validation.name && validation.name && validation.name )
+}
+const initForm = ()=>{
+    form.name=''
+    form.email=''
+    form.subject=''
+    form.message=''
+}
+
+const submitForm = ()=>{
+    console.log(JSON.stringify({...form}))
+    if(isValidate()){
+        fetch(url,{
+               method:'POST',
+               body:JSON.stringify({...form}),
+               headers:{
+                   'Content-Type':'application/json',
+               }
+           })
+           .then(response => response.json())
+           .then(data => console.log('response', data))
+           .catch(e=>console.log(e))
+       initForm()
+    }
+}
+</script>
+
 <template>
     <div class="contact">
         <div class="row justify-content-center">
@@ -14,6 +77,7 @@
                                     id="contactForm"
                                     name="contactForm"
                                     class="contactForm"
+                                    @submit.prevent="submitForm"
                                 >
                                     <div class="row">
                                         <div class="col-md-6 pb-3">
@@ -27,6 +91,8 @@
                                                     name="name"
                                                     id="name"
                                                     placeholder="Name"
+                                                    v-model="form.name"
+                                                    :class="validation.name? '':'invalid'"
                                                 />
                                             </div>
                                         </div>
@@ -41,6 +107,8 @@
                                                     name="email"
                                                     id="email"
                                                     placeholder="Email"
+                                                    v-model="form.email"
+                                                    :class="validation.email? '':'invalid'"
                                                 />
                                             </div>
                                         </div>
@@ -57,6 +125,8 @@
                                                     name="subject"
                                                     id="subject"
                                                     placeholder="Subject"
+                                                    v-model="form.subject"
+                                                    :class="validation.subject? '':'invalid'"
                                                 />
                                             </div>
                                         </div>
@@ -72,11 +142,13 @@
                                                     cols="30"
                                                     rows="4"
                                                     placeholder="Message"
+                                                    v-model="form.message"
+                                                    :class="validation.message? '':'invalid'"
                                                 ></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <button class="btn"> Submit</button>
+                                            <button class="btn" type="submit"> Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -253,6 +325,9 @@
 
 .fa-map-marker::before {
   content: "\f041";
+}
+.invalid{
+    border:2px solid red !important;
 }
 
 @media screen and (max-width:800px){

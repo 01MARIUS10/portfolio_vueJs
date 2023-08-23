@@ -24,7 +24,7 @@ export default {
             >
             <span class="blinking-cursor">_</span>
         </h1>
-        <h1>
+        <h1 class="h3">
             <span is="type-async" id="type-text2" ref="context">...</span>
             <span class="blinking-cursor">_</span>
         </h1>
@@ -32,9 +32,16 @@ export default {
 </template>
 
 <style lang="scss">
+h1{
+    font-weight: 600 !important;
+    font-family: "Roboto" ,sans-serif !important;
+    // font-size: 2rem !important;
+}
 @media screen and (max-width:600px){
     h1{
         font-size: 18px;
+        font-weight: 600px;
     }
+
 }
 </style>

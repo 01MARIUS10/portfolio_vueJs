@@ -1,21 +1,28 @@
 <script setup>
 import { ref,reactive,provide } from "vue";
-
 import  contact  from '@/views/aboutView/contact.vue' 
 import aboutMe from '@/views/aboutView/aboutMe.vue'
 import myServices from '@/views/aboutView/myServices.vue'
 import myProjects from '@/views/aboutView/myProjects.vue'
 import navigation from '@/components/molecules/navigation.vue'
+import { onMounted, onUnmounted } from 'vue'
 
 
 let navigationState = reactive({
     state:0
 })
+
+const handleScroll = ()=>{
+console.log('io')
+}
 provide('navState',navigationState)
+ onMounted(()=>{
+    window.addEventListener("scroll",handleScroll)
+ })
 
 </script>
 <template>
-    <div class="about">
+    <div class="about" >
         <div class="debugColor">
                 <ul class="d-flex p-0 m-0">
                     <li>
@@ -67,8 +74,6 @@ $nav:80px;
         z-index: 9999;
         bottom:20px;
         right:20px;
-        // min-width:100px;
-        // min-height: 300px;
         background: white;
         box-shadow: 0px 0px 20px 5px black;
         
@@ -77,11 +82,14 @@ $nav:80px;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding:5px 10px;
-            span:nth-child(2){
-                width:80px;
-                height: 80px;
+            span{
+                text-align: center;
                 display: block;
+            }
+            span:first-child , span:last-child{
+                height: auto !important;
+            }
+            span:nth-child(2){
                 border-radius: 50%;
             }
         }
@@ -92,32 +100,22 @@ $nav:80px;
         background: #a69d9d;
         opacity: 0.6;
         font-size: 18px;
-        // position: fixed;
-        // align-items: center;
-        // top: 0;
-        // left: 0;
-        // height: 100vh;
-        // width: $nav;
     }
     #aboutMe{
         background: var(--f1);
     }
     #myService{
-        // background: var(--fgray);
         background:#fff;
     }
-    #myProjects{
-        // background: var(--bgGris);
-        background: rgba($color: #51557E, $alpha: .1);
+    #myProjects,#contact{
+        // background: rgba($color: #51557E, $alpha: .1);
+        background: whitesmoke;
     }
     .content-scroll{
         min-width: 100%;
     }
 }
 .show {
-    // border: solid 3px red;
-    // height: 100vh;
-    // width: 100vw;
     padding:65px 100px 65px calc(100px + $nav);
     display: flex;
     align-items: center;
@@ -129,9 +127,6 @@ $nav:80px;
 
 border: solid 2px grey;
 height: 100%;
-}
-.show>div>div{
-// border: solid 2px red;
 }
 
 
@@ -151,6 +146,17 @@ height: 100%;
     }
     #contact{
         padding-left: $nav;
+    }
+    .debugColor{
+        li {
+            padding:5px 10px;
+            span{
+                width:100px;
+                height: 100px;
+                font-size: 10px;
+                margin-bottom: 8px;
+            }
+        }
     }
 }
 
@@ -203,19 +209,14 @@ height: 100%;
     }
     .debugColor{
         li {
-            padding:2px 5px;
-            span:nth-child(2){
-                width:30px;
-                height: 30px;
-                display: block;
-                border-radius: 50%;
+            padding:2px 5px ;
+            span{
+                width:60px ;
+                height: 60px ;
+                font-size: 10px;
             }
         }
     }
 }
 
-// @media screen and (max-width: 900px){
-//     .show{
-//     }
-// }
 </style>

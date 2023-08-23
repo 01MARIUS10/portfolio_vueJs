@@ -41,7 +41,7 @@ let projects = ref([
 <template>
     <div class="myProjects">
         <div class="myProjects_head">
-            <h1 class="firstText">Projects</h1>
+            <h1 class="firstText">Mes projets</h1>
             <p class="accentSecondText"> I have had the opportunity to work on a variety of exciting projects that have allowed me to showcase my skills and creativity as a front and backend developer.
 Dedicated and passionate about coding development, my approach is driven by an insatiable curiosity and a profound appreciation for the art of programming.</p>
         </div>
@@ -55,14 +55,14 @@ Dedicated and passionate about coding development, my approach is driven by an i
 .myProjects{
     .myProjects_head{
         height: 25vh;
-        margin: 6vh 8vw;
+        margin: 10vh 8vw 0 8vw;
         display: flex;
         justify-content: center;
         flex-direction: column;
     }
     .myProjects_content{
         position: relative;
-        // height: 40vh;
+        margin:0 5%;
         margin-bottom: 1vh;
         .myProjects_card{
             height: 100%;

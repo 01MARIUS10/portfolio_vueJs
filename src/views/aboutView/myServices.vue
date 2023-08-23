@@ -104,51 +104,46 @@ let services = ref([
 <template>
     <div class="myServices">
         <div class="myService_head">
-            <div class="text ps-4">
+            <div class="text ">
                 <p class="h3 firstText">Quels services je vous propose ?</p>
                 <p class="accentSecondText hidePhon400">
                     Découvrez ci-dessous les services que je propose pour vous
                     accompagner dans la réalisation de vos projets web.
                 </p>
             </div>
-            <div class="myService_image p-4 hidePhon800">
-                <div class="s1"></div>
-                <div class="s2"></div>
-                <img
-                    class="bg-white rounded-circle"
-                    src="/image/profil/361237407_3659592854272783_9182702132017054179_n.webp"
-                    alt=""
-                />
-            </div>
+                <div class="myService_image p-4 hidePhon800">
+                    <div class="s1"></div>
+                    <div class="s2"></div>
+                    <img
+                        class="bg-white rounded-circle"
+                        src="/image/profil/361237407_3659592854272783_9182702132017054179_n.webp"
+                        alt=""
+                    />
+                </div>
         </div>
         <div class="myServices_content">
             <template v-for="service in services" class="">
-                <serviceCell :service="service" />
+                <!-- <serviceCell :service="service" /> -->
+                <serviceCell />
             </template>
         </div>
     </div>
 </template>
 <style scoped lang="scss">
+
 .myServices {
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 10vh;
-    gap: 5vh;
-    // background: var(--var8);
+    gap: 6%;
     .myService_head {
         display: flex;
-        // justify-content: space-between;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        width: 100%;
+    margin: 10vh 8vw 1vh 8vw;
         .text {
-            // width: 50%;
-            // flex-grow: 1;
-            padding: 0 5%;
-            p {
-                text-align: center;
+            .accentSecondText{
+                max-width: 600px;
             }
             .textLabel {
                 font-size: 16px;
@@ -157,6 +152,7 @@ let services = ref([
         }
         .myService_image {
             position: relative;
+            margin:0 0 0 80px;
             img {
                 position: absolute;
                 top: 0;
@@ -181,14 +177,17 @@ let services = ref([
     }
     .myServices_content {
         width: 100%;
-        min-height: 50%;
+        display: grid;
+    
     }
 }
 
 @media screen and (max-width: 3200px) {
     .myServices_content {
-        display: flex;
-        gap: 10px;
+        padding:0 5% !important;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap:25px;
+        padding:0 10px;
     }
 
     .myService_image {

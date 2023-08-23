@@ -11,7 +11,7 @@ html{
     scroll-behavior: smooth;
 }
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
 }
 
   .firstText{
@@ -36,7 +36,7 @@ font-weight: 400 !important;
 
 @media screen and (max-width:3200px){
   .firstText{
-    font-size: 25px !important;
+    font-size: 2.6rem !important;
     line-height: 187.5% !important; /* 46.875px */
   }
 
@@ -49,8 +49,9 @@ font-weight: 400 !important;
   line-height: 187.5% !important; /* 30px */
 }
 .accentSecondText{
-  font-size: 18px !important;
-  line-height: 187.5% !important; /* 30px */
+  font-size: 1.1rem !important;
+  line-height: 1.5rem !important; /* 30px */
+  letter-spacing: .1px;
 }
 }
 @media screen and (max-width: 900px){

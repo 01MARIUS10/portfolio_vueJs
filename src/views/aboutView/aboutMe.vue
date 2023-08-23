@@ -1,5 +1,5 @@
 <template>
-    <div class="aboutMe">
+    <div class="aboutMe" >
         <div class="aboutMe_content ">
             <h1 class="firstText one">About Me</h1>
             <p class="aboutMe_text textAboutContent ">Je suis un développeur Fullstack PHP , spécialisé actuellement sur Laravel et Vue.js.
@@ -39,7 +39,7 @@
             // color:rgba($color: #D6D5A8, $alpha: 0.9);
         }
         p{
-            text-align: center;
+            text-align: justify;
             color:rgba($color: #ebeff4, $alpha: .6);
 
         }
