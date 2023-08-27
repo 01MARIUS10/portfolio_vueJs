@@ -18,13 +18,13 @@ import {  RouterView } from 'vue-router'
   /* transform: translateY(100px); */
 }
 .route-enter-active{
-  transition: all 1.5s ease-out;
+  transition: all 2.5s ease-out;
 }
-.route-leave-from{
+/* .route-leave-from{
   opacity:0;
   /* transform: translateY(100px); */
-}
+ /*}
 .route-leave-active{
   transition: all 1.5s ease-in;
-}
+} */
 </style>

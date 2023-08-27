@@ -23,33 +23,38 @@ const descendre = () =>{
     return window.scrollY <previousPosition.value
 }
 
+var scrollTimeOut;
+
 const handleScroll = () => {
+    clearTimeout(scrollTimeOut);
     const {scrollTop,scrollHeight,clientHeight} = document.documentElement
     let current = parseInt(scrollTop/clientHeight)
     console.log('on est sur ',current)
     
-    if (monter()) {        
-        console.log("Fait défiler vers le bas");
-        if(current>=0 && current<2 ){
-           allRef[current+1].value.scrollIntoView({
-                behavior: 'smooth', // Pour un défilement fluide
-                block: 'start',     // Faites défiler l'élément jusqu'au haut de la vue
-            })
+    scrollTimeOut = setTimeout(function(){
+
+        if (monter()) {        
+            console.log("Fait défiler vers le bas");
+            if(current>=0 && current<2 ){
+               allRef[current+1].value.scrollIntoView({
+                    behavior: 'smooth', // Pour un défilement fluide
+                    block: 'start',     // Faites défiler l'élément jusqu'au haut de la vue
+                })
+            }
+        } else if (descendre()) {
+            console.log("Fait défiler vers le haut");
+            if(current<=3 && current>0){
+               allRef[current-1].value.scrollIntoView({
+                    behavior: 'smooth', // Pour un défilement fluide
+                    block: 'start',     // Faites défiler l'élément jusqu'au haut de la vue
+                })
+            }
         }
-    } else if (descendre()) {
-        console.log("Fait défiler vers le haut");
-        if(current<=3 && current>0){
-           allRef[current-1].value.scrollIntoView({
-                behavior: 'smooth', // Pour un défilement fluide
-                block: 'start',     // Faites défiler l'élément jusqu'au haut de la vue
-            })
-        }
-    }
-    previousPosition.value = scrollTop;
-    setTimeout(()=>{
-        i.value= (scrollTop+clientHeight>=scrollHeight)? 3:parseInt(scrollTop/clientHeight)
-        // console.log(scrollTop+clientHeight,scrollHeight)
-    },500)
+        previousPosition.value = scrollTop;
+        // setTimeout(()=>{
+        //     i.value= (scrollTop+clientHeight>=scrollHeight)? 3:parseInt(scrollTop/clientHeight)
+        // },500)
+    },200)
     
 };
 onMounted(() => {

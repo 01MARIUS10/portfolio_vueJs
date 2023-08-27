@@ -40,7 +40,7 @@ let breakpoints = reactive({
         >
             <Slide v-for="i in slides" :key="i">
                 <figure>
-                    <span class="title">Bus nay {{ i }}</span>
+                    <span class="title">Projet{{ i }}</span>
                     <div class=" image w-100 d-flex justify-content-center mb-3">
                         <div class="img">
                             <img src="/image/project/projectImage.png" />
@@ -53,18 +53,6 @@ let breakpoints = reactive({
                             elit. Hic nam omnis amet nihil recusandae blanditiis
                             accusamus accusantium aspernatur enim, nulla dolor?
                         </p>
-                        <!-- <div class="technologie hidePhon600">
-                            <span>Technologie:</span>
-                            <div class="technologie_list">
-                                <p>
-                                    <img src="/image/skills/vuejs.png" alt="" />
-                                </p>
-                            </div>
-                        </div> -->
-
-                        <!-- <p class="slide_link">
-                            <a href="#" target="_blank">{{ i }} - see more</a>
-                        </p> -->
                     </figcaption>
                     
                 </figure>
