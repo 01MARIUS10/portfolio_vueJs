@@ -1,6 +1,5 @@
 
 <script setup>
-import { inject } from 'vue';
 
 let props = defineProps({
     item:{
@@ -8,7 +7,6 @@ let props = defineProps({
     }
 }
 )
-let navState = inject('navState')
 function activeClass(i){
     return props.item==i? 'active':''
 }
@@ -16,10 +14,10 @@ function activeClass(i){
 </script>
 <template>
         <div class="d-flex w-100 h-100 navigation">
-                <a :class="activeClass(0)"  href="#aboutMe"></a>
-                <a :class="activeClass(1)"  href="#myService"></a>
-                <a :class="activeClass(2)"  href="#myProjects"></a>
-                <a :class="activeClass(3)"  href="#contact"></a>
+                <a :class="activeClass(0)" href="#aboutMe"></a>
+                <a :class="activeClass(1)" href="#myService"></a>
+                <a :class="activeClass(2)" href="#myProjects"></a>
+                <a :class="activeClass(3)" href="#contact"></a>
         </div>
 </template>
 

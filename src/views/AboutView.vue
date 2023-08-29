@@ -1,65 +1,18 @@
 <script setup>
-import { ref, reactive, provide } from "vue";
+import { ref,onMounted } from "vue";
 import contact from "@/views/aboutView/contact.vue";
 import aboutMe from "@/views/aboutView/aboutMe.vue";
 import myServices from "@/views/aboutView/myServices.vue";
 import myProjects from "@/views/aboutView/myProjects.vue";
 import navigation from "@/components/molecules/navigation.vue";
-import { onMounted, onUnmounted,computed } from "vue";
+import { useTrackNavigation } from '@/composable/navigation.js'
 
-let ref1 = ref('')
-let ref2 = ref('')
-let ref3 = ref('')
-let ref4 = ref('')
-let allRef = [ref1,ref2,ref3,ref4]
-let previousPosition = ref(window.scrollY);
+let allRef = ['aboutMe','myService','myProjects','contact']
 
-let i = ref(0)
-
-const monter = () =>{
-    return window.scrollY >previousPosition.value
-}
-const descendre = () =>{
-    return window.scrollY <previousPosition.value
-}
-
-var scrollTimeOut;
-
-const handleScroll = () => {
-    clearTimeout(scrollTimeOut);
-    const {scrollTop,scrollHeight,clientHeight} = document.documentElement
-    let current = parseInt(scrollTop/clientHeight)
-    console.log('on est sur ',current)
-    
-    scrollTimeOut = setTimeout(function(){
-
-        if (monter()) {        
-            console.log("Fait défiler vers le bas");
-            if(current>=0 && current<2 ){
-               allRef[current+1].value.scrollIntoView({
-                    behavior: 'smooth', // Pour un défilement fluide
-                    block: 'start',     // Faites défiler l'élément jusqu'au haut de la vue
-                })
-            }
-        } else if (descendre()) {
-            console.log("Fait défiler vers le haut");
-            if(current<=3 && current>0){
-               allRef[current-1].value.scrollIntoView({
-                    behavior: 'smooth', // Pour un défilement fluide
-                    block: 'start',     // Faites défiler l'élément jusqu'au haut de la vue
-                })
-            }
-        }
-        previousPosition.value = scrollTop;
-        // setTimeout(()=>{
-        //     i.value= (scrollTop+clientHeight>=scrollHeight)? 3:parseInt(scrollTop/clientHeight)
-        // },500)
-    },200)
-    
-};
-onMounted(() => {
-    window.addEventListener("scroll", handleScroll);
-});
+let navigationObserver = ref('')
+onMounted(()=>{
+    navigationObserver.value = useTrackNavigation(allRef)
+})
 
 //  t id template_kjn5jty
 //  s id service_mpjkp5l
@@ -88,20 +41,20 @@ onMounted(() => {
             </ul>
         </div>
         <div class="navig">
-            <navigation :item="i"/>
+            <navigation :item="navigationObserver.currentSection" />
         </div>
         <div class="about-content">
             <div class="content-scroll">
-                <div id="aboutMe" class="show item1" ref="ref1">
+                <div id="aboutMe" class="show item1" >
                     <aboutMe />
                 </div>
-                <div id="myService" class="show item2" ref="ref2">
+                <div id="myService" class="show item2">
                     <myServices />
                 </div>
-                <div id="myProjects" class="show item3" ref="ref3">
+                <div id="myProjects" class="show item3">
                     <myProjects />
                 </div>
-                <div id="contact" class="item4" ref="ref4">
+                <div id="contact" class="item4">
                     <contact />
                 </div>
             </div>
