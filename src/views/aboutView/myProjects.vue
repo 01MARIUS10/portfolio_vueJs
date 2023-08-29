@@ -39,7 +39,7 @@ let projects = ref([
 </script>
 
 <template>
-    <div class="myProjects">
+    <div class="myProjects contentSection">
         <div class="myProjects_head">
             <h1 class="firstText">Mes projets</h1>
             <p class="accentSecondText"> I have had the opportunity to work on a variety of exciting projects that have allowed me to showcase my skills and creativity as a front and backend developer.

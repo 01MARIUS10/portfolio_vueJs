@@ -9,12 +9,23 @@ let settings = reactive({
     snapAlign: "center",
 });
 let breakpoints = reactive({
-    // 700px and up
+
     100: {
-        itemsToShow: 1,
+        itemsToShow: 1.1,
         snapAlign: "center",
     },
-    // 1024 and up
+    450: {
+        itemsToShow: 1.4,
+        snapAlign: "center",
+    },
+    600: {
+        itemsToShow: 1.5,
+        snapAlign: "center",
+    },
+    700: {
+        itemsToShow: 2.1,
+        snapAlign: "center",
+    },
     900: {
         itemsToShow: 2.3,
         snapAlign: "start",

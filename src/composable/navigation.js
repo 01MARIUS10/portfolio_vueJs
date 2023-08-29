@@ -33,7 +33,7 @@ export function useTrackNavigation(elementsIds) {
                     const element = entry.target;
                     element.scrollIntoView({
                         behavior: "smooth",
-                        block: "start",
+                        block: "end",
                     });
                     currentSection.value = elements.indexOf(element);
                     previousPosition.value = scrollTop;
@@ -47,27 +47,6 @@ export function useTrackNavigation(elementsIds) {
     elements.forEach((element) => {
         observer.observe(element);
     });
-    function sc() {
-        // console.log(scrollTop.value, scrollHeight.value, clientHeight.value);
-        if (
-            scrollTop.value > document.documentElement.scrollTop &&
-            currentSection.value == elements.length - 1
-        ) {
-            elements[elements.length - 2].scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-            });
-            currentSection.value = elements.length - 2;
-        }
-        scrollTop.value = document.documentElement.scrollTop;
-        scrollHeight.value = document.documentElement.scrollHeight;
-        clientHeight.value = document.documentElement.clientHeight;
-        if (-clientHeight.value + scrollHeight.value == scrollHeight) {
-            currentSection.value = elements.length - 1;
-        }
-    }
-    window.addEventListener("scroll", sc);
 
-    // expose managed state as return value
     return { currentSection };
 }

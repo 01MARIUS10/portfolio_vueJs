@@ -102,7 +102,7 @@ let services = ref([
 ]);
 </script>
 <template>
-    <div class="myServices">
+    <div class="myServices contentSection">
         <div class="myService_head">
             <div class="text ">
                 <p class="h3 firstText">Quels services je vous propose ?</p>

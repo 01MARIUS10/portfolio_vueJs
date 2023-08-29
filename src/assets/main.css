@@ -74,4 +74,6 @@ font-weight: 400 !important;
 }
   };
 
-  
+.contentSection{
+  max-width: 1400px;
+}
