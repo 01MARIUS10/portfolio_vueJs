@@ -83,4 +83,11 @@ Dedicated and passionate about coding development, my approach is driven by an i
         }
     }
 }
+
+@media screen and (max-width:900px){
+
+    .myProjects_head{
+        margin: 5vh 8vw 0 8vw !important;
+    }
+}
 </style>

@@ -17,14 +17,14 @@ export default {
 }
 </script>
 <template>
-    <div class="">
+    <div class="mb-2">
         <h1>
             <span is="type-async" id="type-text" class="letters" ref="name"
                 >...</span
             >
             <span class="blinking-cursor">_</span>
         </h1>
-        <h1 class="h3">
+        <h1 class="h3 mb-2">
             <span is="type-async" id="type-text2" ref="context">...</span>
             <span class="blinking-cursor">_</span>
         </h1>

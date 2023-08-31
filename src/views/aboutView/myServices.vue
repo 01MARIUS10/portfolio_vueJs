@@ -1,13 +1,16 @@
 <script setup>
 import { ref } from "vue";
 import serviceCell from "@/components/molecules/serviceCell.vue";
-
+// https://olaolu.dev/
 let services = ref([
     {
-        title: "Conception Web",
+        title: "Integration web",
         subtitle:
             "Transformez des conceptions saisissantes en expériences web fluides et fonctionnelles.",
-        label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. it amet consectetur it amet consectetur adipisicing elit. adipisicing elit. it amet consectetur adipisicing elit. Repellat ab doloribus sapiente!",
+        label: `
+        Vous chercher a transformer votre maquette en site ou page web fonctionnel? 
+        je maitrise les languages web tel que le html ,css et le javascript.
+        `,
         qualite: [
             {
                 title: "Précision dans les Détails",
@@ -28,10 +31,14 @@ let services = ref([
         img: "/image/autonomie.png",
     },
     {
-        title: "fullstack PHP",
+        title: "Frontend VueJs et Angular",
         subtitle:
             "Transformez des conceptions saisissantes en expériences web fluides et fonctionnelles.",
-        label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. it amet consectetur it amet consectetur adipisicing elit. adipisicing elit. it amet consectetur adipisicing elit. Repellat ab doloribus sapiente!",
+        label: `
+        Si vous avez besoin de develloper des interface web dynamique et reactive;
+        Avec Vuejs et Angular , je pourrait
+        cree des applications web complexes avec de meilleurs experiences utilisateurs 
+        `,
         qualite: [
             {
                 title: "Précision dans les Détails",
@@ -51,35 +58,14 @@ let services = ref([
         ],
         img: "/image/autonomie.png",
     },
+    
     {
-        title: " VueJs et Angular",
+        title: "Backend Laravel et Nodejs",
         subtitle:
             "Transformez des conceptions saisissantes en expériences web fluides et fonctionnelles.",
-        label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. it amet consectetur it amet consectetur adipisicing elit. adipisicing elit. it amet consectetur adipisicing elit. Repellat ab doloribus sapiente!",
-        qualite: [
-            {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
-            },
-            {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
-            },
-            {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
-            },
-        ],
-        img: "/image/autonomie.png",
-    },
-    {
-        title: "Back-end PHP Laravel",
-        subtitle:
-            "Transformez des conceptions saisissantes en expériences web fluides et fonctionnelles.",
-        label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. it amet consectetur it amet consectetur adipisicing elit. adipisicing elit. it amet consectetur adipisicing elit. Repellat ab doloribus sapiente!",
+        label: `
+        Je develloppe des applications backend restAPI avec les framework Laravel et Nodejs
+         .Avec les bonnes conceptions et architectures conforme a votre projet`,
         qualite: [
             {
                 title: "Précision dans les Détails",
@@ -105,7 +91,8 @@ let services = ref([
     <div class="myServices contentSection">
         <div class="myService_head">
             <div class="text ">
-                <p class="h3 firstText">Quels services je vous propose ?</p>
+                <p class="firstText">Mes Competences</p>
+                <p class="h3 question">Quels services je vous propose ?</p>
                 <p class="accentSecondText hidePhon400">
                     Découvrez ci-dessous les services que je propose pour vous
                     accompagner dans la réalisation de vos projets web.
@@ -123,8 +110,7 @@ let services = ref([
         </div>
         <div class="myServices_content">
             <template v-for="service in services" class="">
-                <!-- <serviceCell :service="service" /> -->
-                <serviceCell />
+                <serviceCell  :service="service"/>
             </template>
         </div>
     </div>
@@ -139,8 +125,6 @@ let services = ref([
     .myService_head {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-    margin: 10vh 8vw 1vh 8vw;
         .text {
             .accentSecondText{
                 max-width: 600px;
@@ -152,7 +136,7 @@ let services = ref([
         }
         .myService_image {
             position: relative;
-            margin:0 0 0 80px;
+            margin:0 50px 0 80px;
             img {
                 position: absolute;
                 top: 0;
@@ -183,11 +167,25 @@ let services = ref([
 }
 
 @media screen and (max-width: 3200px) {
+    // .text{
+    //     margin-top: 10px;
+    // }
     .myServices_content {
-        padding:0 5% !important;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap:25px;
-        padding:0 10px;
+        padding: 15px 10% 0 10% !important;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:30px;
+    }
+    .myService_head{
+        align-items: end;    
+        margin: 9vh 8vw 1vh 8vw;
+    }
+    .firstText{
+        margin-bottom: .4rem !important;
+    }
+    .question{
+        font-size: 1.8rem;
+        font-weight: 400;
+        letter-spacing: 2px;
     }
 
     .myService_image {
@@ -227,6 +225,8 @@ let services = ref([
         z-index: 0;
     }
 }
+
+
 @media screen and (max-width: 1500px) {
     .myService_image {
         height: 21vh;
@@ -236,6 +236,7 @@ let services = ref([
             max-height: 100%;
         }
     }
+
 
     .s1::before {
         width: 251px;
@@ -253,17 +254,18 @@ let services = ref([
         height: 250px;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .myServices {
         padding-top: 0;
         gap: 0;
         justify-content: space-around;
     }
-    .myServices_content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
+    // .myServices_content {
+    //     display: grid;
+    //     grid-template-columns: 1fr 1fr;
+    //     grid-template-rows: 1fr 1fr;
+    // }
 
     .s1::before {
         width: 200px;
@@ -282,6 +284,14 @@ let services = ref([
         height: 185px;
     }
 }
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width:900px){
+.myServices_content{
+    display: flex !important;
+    flex-direction: column;
+}
+.myService_head{
+    margin: 5vh 8vw 0 8vw !important;
+}
 }
 </style>

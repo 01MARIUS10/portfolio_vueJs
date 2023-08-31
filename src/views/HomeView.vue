@@ -18,8 +18,12 @@ let debugScreen = computed(()=>{
                     <div class="name mb-4">
                         <typeAnimation />
                     </div>
-                    <p>
-                       {{ debugScreen }} Passionate about creating efficient, scalable, and
+                    <p class="mb-3">
+                        Passionné par la création de systèmes efficaces, évolutifs et fiables, 
+                        je me suis spécialisé dans le développement de solutions web. Mon objectif principal 
+                        est de concevoir des processus fluides qui optimisent l'expérience utilisateur. En plus 
+                        de mes compétences techniques, je possède une grande aptitude au travail collaboratif au sein d'équipes professionnelles.
+                       <!-- {{ debugScreen }} Passionate about creating efficient, scalable, and
                         reliable systems , I specialize in the
                         <span class="accentText">Laravel PHP</span> web
                         framework and <span class="accentText">Vue js</span> ,
@@ -30,7 +34,7 @@ let debugScreen = computed(()=>{
                         have a
                         <span class="accentText"
                             >strong ability to work well within a team.</span
-                        >
+                        > -->
                     </p>
                     <!-- <div class="allSkills">
                         <skills />
@@ -93,6 +97,9 @@ main {
                     margin:0 5px;
                 }
             }
+        }
+        button{
+            border: none;
         }
         .image {
             flex-grow: 1;

@@ -4,7 +4,7 @@ let props = defineProps({
         default: {
             title: "Lorem ipsum dolor ",
             label: "Lorem ipsum dolor sit amet consectetur adipisicing elit ab doloribus sapiente!",
-            img: "/image/autonomie.png",
+            img: "/image/autonomie.png"
         },
     },
 });
@@ -33,10 +33,8 @@ let props = defineProps({
     padding: 20px;
     display: grid;
     height: 100%;
-    box-shadow:inset 0px 0px 15px 0px #51557E;
-    .serviceCell_image {
-        margin-bottom: 5px;
-    }
+    // box-shadow:inset 0px 0px 15px 0px #51557E;
+
         .serviceCell_title {
             font-family: Poppins;
             font-size: 16px;
@@ -51,7 +49,6 @@ let props = defineProps({
             font-size: 14px !important;
             font-style: normal !important;
             font-weight: 400 !important;
-            line-height: 177.5% !important;
             text-align: center;
         }
         .asking {
@@ -81,23 +78,20 @@ let props = defineProps({
                 }
             }
         }
-    &:hover{
-        transform: scale(.95);
-    }
 }
     .sombre:hover,.clair{
-        box-shadow: 0px 0px 15px 0px #51557E;
         background: white;
+        box-shadow: none;
+        border: solid 1.6px  rgb(27, 36, 48);
             span{
                 color:#000;
-
             }
             p{
                 color:#000;
 
             }
             .serviceCell_title{
-                color: #000;
+                color: var(--f1);
             }
             .serviceCell_text {
                 color: var(--textDark_second);
@@ -113,13 +107,13 @@ let props = defineProps({
     }
 @media screen and (max-width:3200px){
     .serviceCell {
-        grid-template-rows: 105px 30px 90px 40px;
+        grid-template-rows: 105px 30px auto 40px;
     }
     .serviceCell_image {
         display: flex;
         justify-content: center;
         img{
-            height: 105px;
+            height: 90px;
             width: auto;
         }
     }
@@ -127,43 +121,70 @@ let props = defineProps({
         text-align: center;
     }
     .serviceCell_text{
-        padding: 0 5px;;
+        padding: 0 5px;
+        line-height: 1.5rem !important;
     }
 }
 @media screen and (max-width: 1500px) {
     .serviceCell {
-        padding: 15px 20px;
+        padding: 15px 20px 20px 20px;
             .serviceCell_text {
             line-height: 22px !important;
         }
     }
 }
-@media screen and (max-width: 1200px) {
-    .serviceCell {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 15px;
-        .serviceCell_image {
-            display: flex;
-            align-items: center;
-            width: 30%;
-        }
-            .serviceCell_text {
-            line-height: 21px !important;
-        }
-    }
+
+@media screen and (max-width: 1400px) {
+//     .serviceCell {
+//   grid-template-rows: 85px 30px 130px 40px;
+// }
+.myServices{
+    gap: 10%;
 }
+}
+// @media screen and (max-width: 1200px) {
+//     .serviceCell {
+//         display: grid;
+//         // grid-template-columns: auto 1fr;
+//         // grid-template-rows: 30px 1fr;
+//         // padding: 15px;
+//         // height: 160px;
+//         .serviceCell_image {
+//             margin:0;
+//             display: block;
+//             // grid-column: 1;
+//             // grid-row: 1;
+//             display: flex;
+//             align-items: center;
+//             height: fit-content;
+//         }
+//         // .serviceCell_title{
+//         //     display: block;
+//         //     grid-column: 2;
+//         //     grid-row: 1;
+//         // }
+//             .serviceCell_text ,ul{
+//             // display: block;
+//             // grid-column: 2;
+//             // grid-row: 2;
+//             line-height: 21px !important;
+//         }
+//     }
+// }
 @media screen and (max-width: 600px) {
     .serviceCell {
         padding: 5px 8px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 30px 1fr;
+        height: 160px;
+        
         .serviceCell_image {
             width: 100%;
             height: 45%;
             justify-content: center;
+            grid-column: 1;
+            grid-row: 1;
             img{
                 width: auto;
                 height: 100%;
@@ -173,6 +194,17 @@ let props = defineProps({
             ul{
                 padding: 0;
             }
+              .serviceCell_title{
+            display: block;
+            grid-column: 2;
+            grid-row: 1;
+        }
+            .serviceCell_text ,ul{
+            display: block;
+            grid-column: 2;
+            grid-row: 2;
+            line-height: 21px !important;
+        }
     }
 }
 </style>

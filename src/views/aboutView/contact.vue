@@ -173,8 +173,8 @@ const submitForm = ()=>{
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
-                                            <span>Address:</span> 
-                                            lot I5 Ambohimarina Alasora
+                                            <span>ville:</span> 
+                                            Antananarivo Madagascar
                                         </p>
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@ const submitForm = ()=>{
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
-                                            <span>Phone:</span>
+                                            <span>whatsapp:</span>
                                             <a href="tel://1234567920"
                                                 >+ 261 34 99 486 84</a
                                             >
@@ -206,7 +206,7 @@ const submitForm = ()=>{
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
                                             <span>Email:</span>
-                                            <a href="mailto:info@yoursite.com"
+                                            <a href="mailto:mariustsiorimbola@gmail.com"
                                                 >mariustsiorimbola@gmail.com</a
                                             >
                                         </p>

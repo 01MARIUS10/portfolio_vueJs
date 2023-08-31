@@ -16,7 +16,7 @@ html{
 
   .firstText{
     color:var(--textDark_first);
-  font-family: Poppins;
+  font-family: "Roboto", sans-serif !important;
   font-style: normal;
   font-weight: 600 !important;
 }
