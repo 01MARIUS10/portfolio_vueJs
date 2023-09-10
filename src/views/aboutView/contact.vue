@@ -1,63 +1,16 @@
 <script setup>
 
 import { reactive,ref  } from 'vue';
-import emailjs from '@emailjs/browser';
+import { useContactStore } from '../../stores/contact.js';
+
 // const url = 'http://localhost:8000'
 // const url = 'http://01marius10-api.000.pe/sendMail/index.php'
 // const url = 'https://pizzerialaravel.000webhostapp.com/'
 //9DAsT4Bhpsm 
-let form = reactive({
-    name:'',
-    email:'',
-    subject:'',
-    message:''
-})
-let validation = reactive({
-    name:true,
-    email:true,
-    subject:true,
-    message:true
-}) 
-const emailValidation = (e)=>{
-    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-    return regex.test(e)
-}
-const trimFormValue = () =>{
-    form.name =    form.name.trim()
-    form.email =   form.email.trim()
-    form.subject = form.subject.trim()
-    form.message = form.message.trim()
-}
 
-const isValidate = ()=>{
-    trimFormValue()
-    validation.name = (form.name=='')? false:true
-    validation.email = emailValidation(form.email) ? true:false
-    validation.subject = (form.subject=='')? false:true
-    validation.message = (form.message=='')? false:true
+let useForm = useContactStore();
 
-    return ( validation.name && validation.name && validation.name && validation.name )
-}
-const initForm = ()=>{
-    form.name=''
-    form.email=''
-    form.subject=''
-    form.message=''
-}
-let formRef = ref('')
-const submitForm = ()=>{
-    console.log("send ...")
 
-    if(isValidate()){
-        emailjs.sendForm("service_mpjkp5l", "template_kjn5jty", formRef.value, "8c7YCi1q_9ViT92Tn")
-        .then((result) => {
-            console.log('SUCCESS!', result.text);
-        }, (error) => {
-            console.log('FAILED...', error.text);
-        });
-        initForm()
-    }
-}
 </script>
 
 <template>
@@ -69,46 +22,47 @@ const submitForm = ()=>{
                         <div
                             class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch"
                         >
-                            <div class="contact-wrap w-100 p-md-5 p-4">
-                                <h3 class="mb-4">Get in touch</h3>
+                            <div class="contact-wrap d-flex align-items-center w-100 p-md-5 p-4">
+                                <!-- <h3 class="mb-4">Get in touch</h3> -->
                                 <form
                                     method="POST"
                                     id="contactForm"
                                     name="contactForm"
                                     class="contactForm"
-                                    @submit.prevent="submitForm"
+                                    @submit.prevent="useForm.submit"
                                     ref="formRef"
                                 >
                                     <div class="row">
                                         <div class="col-md-6 pb-3">
                                             <div class="form-group">
                                                 <label class="label" for="name"
-                                                    >Full Name</label
+                                                    >Votre Nom</label
                                                 >
                                                 <input
                                                     type="text"
                                                     class="form-control"
                                                     name="name"
                                                     id="name"
-                                                    placeholder="Name"
-                                                    v-model="form.name"
-                                                    :class="validation.name? '':'invalid'"
+                                                    placeholder="nom"
+                                                    ref="useForm.refName"
+                                                    v-model="useForm.form.name"
+                                                    :class="useForm.validation.name? '':'invalid'"
                                                 />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="form-group">
                                                 <label class="label" for="email"
-                                                    >Email Address</label
+                                                    >Votre adresse Email</label
                                                 >
                                                 <input
                                                     type="email"
                                                     class="form-control"
                                                     name="email"
                                                     id="email"
-                                                    placeholder="Email"
-                                                    v-model="form.email"
-                                                    :class="validation.email? '':'invalid'"
+                                                    placeholder="email"
+                                                    v-model="useForm.form.email"
+                                                    :class="useForm.validation.email? '':'invalid'"
                                                 />
                                             </div>
                                         </div>
@@ -117,23 +71,23 @@ const submitForm = ()=>{
                                                 <label
                                                     class="label"
                                                     for="subject"
-                                                    >Subject</label
+                                                    >Sujet</label
                                                 >
                                                 <input
                                                     type="text"
                                                     class="form-control"
                                                     name="subject"
                                                     id="subject"
-                                                    placeholder="Subject"
-                                                    v-model="form.subject"
-                                                    :class="validation.subject? '':'invalid'"
+                                                    placeholder="sujet"
+                                                    v-model="useForm.form.subject"
+                                                    :class="useForm.validation.subject? '':'invalid'"
                                                 />
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
                                             <div class="form-group">
                                                 <label class="label" for="#"
-                                                    >Message</label
+                                                    >votre message</label
                                                 >
                                                 <textarea
                                                     name="message"
@@ -141,14 +95,14 @@ const submitForm = ()=>{
                                                     id="message"
                                                     cols="30"
                                                     rows="4"
-                                                    placeholder="Message"
-                                                    v-model="form.message"
-                                                    :class="validation.message? '':'invalid'"
+                                                    placeholder="message"
+                                                    v-model="useForm.form.message"
+                                                    :class="useForm.validation.message? '':'invalid'"
                                                 ></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <button class="btn" type="submit"> Submit</button>
+                                            <button class="btn" type="submit"> Envoyer</button>
                                         </div>
                                     </div>
                                 </form>
@@ -158,10 +112,9 @@ const submitForm = ()=>{
                             class="col-lg-4 col-md-5 d-flex align-items-stretch"
                         >
                             <div class="info-wrap  w-100 p-md-5 p-4">
-                                <h3>Let's get in touch</h3>
-                                <p class="mb-4">
-                                    We're open for any suggestion or just to
-                                    have a chat
+                                <h3 class="mb-4">Contactez-moi</h3>
+                                <p class="mb-4"> N'hésitez pas à
+                                      me contacter pour toute question ou demande d'information.
                                 </p>
                                 <div
                                     class="dbox w-100 "
@@ -169,7 +122,9 @@ const submitForm = ()=>{
                                     <div
                                         class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
-                                        <span class="fa fa-map-marker"></span>
+                                        <span class="IconSpan">
+                                            <img src="/icons/footer/gps.png" alt="">
+                                        </span>
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
@@ -184,7 +139,9 @@ const submitForm = ()=>{
                                     <div
                                         class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
-                                        <span class="fa fa-phone"></span>
+                                        <span class="IconSpan">
+                                            <img src="/icons/footer/whatsapp(1).png" alt="">
+                                        </span>
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
@@ -201,7 +158,9 @@ const submitForm = ()=>{
                                     <div
                                         class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
-                                        <span class="fa fa-paper-plane"></span>
+                                        <span class="IconSpan">
+                                            <img src="/icons/footer/email.png" alt="">
+                                        </span>
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
@@ -218,7 +177,9 @@ const submitForm = ()=>{
                                     <div
                                         class="icon me-2 d-flex align-items-center justify-content-center"
                                     >
-                                        <span class="fa fa-globe"></span>
+                                        <span class="IconSpan">
+                                            <img src="/icons/footer/linkedin(1).png" alt="">
+                                        </span>
                                     </div>
                                     <div class="text d-flex align-items-center pl-3">
                                         <p>
@@ -297,6 +258,19 @@ const submitForm = ()=>{
                         height: 50px;
                         border-radius: 50%;
                         border: 2px solid rgba(255, 255, 255, 0.2);
+                        .IconSpan{
+                            width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+      border-radius: 50%;
+      background: #f5f5f5;
+    width: 95%;
+    height: 95%;
+  }
+                        }
                         span {
                             font-size: 20px;
                         }

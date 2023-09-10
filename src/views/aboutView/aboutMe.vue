@@ -1,3 +1,10 @@
+<script setup>
+let watchCV = ()=>{
+    window.open('/file/MARIUS_CV.pdf',"_blank")
+}
+
+</script>
+
 <template>
     <div class="aboutMe contentSection" >
         <div class="aboutMe_content ">
@@ -19,8 +26,16 @@
 
 
 </p>
-        </div>
-    </div>
+<button class="btn" @click="watchCV">Download CV</button>
+<!-- <iframe
+        title="PDF"
+        src='/file/MARIUS_CV.pdf'
+        width="100%"
+        height="1000px" 
+      ></iframe> -->
+</div>
+</div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -31,6 +46,10 @@
     height: 100%;
     width: 100%;
     .aboutMe_content{
+        button{
+            background: #D6D5A8;
+            color:black;
+        }
         // width:50%;
         h1{
             text-align: center;

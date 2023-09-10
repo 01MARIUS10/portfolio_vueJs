@@ -42,8 +42,14 @@ let projects = ref([
     <div class="myProjects contentSection">
         <div class="myProjects_head">
             <h1 class="firstText">Mes projets</h1>
-            <p class="accentSecondText"> I have had the opportunity to work on a variety of exciting projects that have allowed me to showcase my skills and creativity as a front and backend developer.
-Dedicated and passionate about coding development, my approach is driven by an insatiable curiosity and a profound appreciation for the art of programming.</p>
+            <p class="accentSecondText">
+                 <!-- I have had the opportunity to work on a variety of exciting projects that have allowed me to showcase my skills and creativity as a front and backend developer.
+Dedicated and passionate about coding development, my approach is driven by an insatiable curiosity and a profound appreciation for the art of programming. -->
+
+Je suis ravi de vous presenter un apercu sur mes realisations web , ou je partage fierement mon travail ainsi que ma passion et devotion pour le devellopement Web .
+Avoir une meilleur approche du probleme et de maniere simple tout en adoptant une architecture propre , 
+ Chacun de ses projets representent un defi et contribue a ma croissance proffessionnel et competences. 
+</p>
         </div>
         <div class="myProjects_content">
             <carousselProjects />
@@ -83,7 +89,14 @@ Dedicated and passionate about coding development, my approach is driven by an i
         }
     }
 }
-
+@media screen and (max-height:700px) and (min-width:900px){
+    .myProjects .myProjects_head{
+        margin: 6vh 8vw 0 8vw;
+    }
+    .firstText{
+        margin-bottom: 0 !important;
+    }
+}
 @media screen and (max-width:900px){
 
     .myProjects_head{

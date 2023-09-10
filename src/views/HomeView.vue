@@ -18,27 +18,13 @@ let debugScreen = computed(()=>{
                     <div class="name mb-4">
                         <typeAnimation />
                     </div>
-                    <p class="mb-3">
+                    <p class="mb-4">
                         Passionné par la création de systèmes efficaces, évolutifs et fiables, 
                         je me suis spécialisé dans le développement de solutions web. Mon objectif principal 
                         est de concevoir des processus fluides qui optimisent l'expérience utilisateur. En plus 
                         de mes compétences techniques, je possède une grande aptitude au travail collaboratif au sein d'équipes professionnelles.
-                       <!-- {{ debugScreen }} Passionate about creating efficient, scalable, and
-                        reliable systems , I specialize in the
-                        <span class="accentText">Laravel PHP</span> web
-                        framework and <span class="accentText">Vue js</span> ,
-                        strive to build seamless processes that enhance the user
-                        experience. In addition to my technical expertise, I am
-                        also
-                        <span class="accentText"> highly versatile</span> and
-                        have a
-                        <span class="accentText"
-                            >strong ability to work well within a team.</span
-                        > -->
+                       
                     </p>
-                    <!-- <div class="allSkills">
-                        <skills />
-                    </div> -->
                     <div class="w-100 d-flex goTo">
                         <router-link to="/about">
                             <button>
@@ -60,10 +46,16 @@ let debugScreen = computed(()=>{
 </template>
 <style lang="scss" >
 // #91593E
+$a: #1B2430;
+$b: #51557E;
+$c: #D6D5A8;
 main {
     width: 100vw;
     height: 100vh;
 
+    background: linear-gradient(237deg, $a, rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(147deg, $b, rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(356deg, #86492bed, rgba(0, 0, 255, 0) 70.71%);
     background: linear-gradient(237deg, #46244c, rgba(255, 0, 0, 0) 70.71%),
         linear-gradient(147deg, #86492bed, rgba(0, 255, 0, 0) 70.71%),
         linear-gradient(356deg, #1b2430, rgba(0, 0, 255, 0) 70.71%);
@@ -89,6 +81,8 @@ main {
                 display: flex;
                 align-items: center;
                 background: #46244c;
+                background: $a;
+
                 font: "Garamond, Bodoni, Didot";
                 color: #fff;
             }

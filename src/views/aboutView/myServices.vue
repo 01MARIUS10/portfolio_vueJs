@@ -110,18 +110,27 @@ let services = ref([
         </div>
         <div class="myServices_content">
             <template v-for="service in services" class="">
+            <transition>
                 <serviceCell  :service="service"/>
+            </transition>
             </template>
         </div>
     </div>
 </template>
 <style scoped lang="scss">
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
 
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 .myServices {
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 6%;
     .myService_head {
         display: flex;
         justify-content: space-between;
@@ -170,6 +179,9 @@ let services = ref([
     // .text{
     //     margin-top: 10px;
     // }
+    .myServices{
+        gap: 6%;
+    }
     .myServices_content {
         padding: 15px 10% 0 10% !important;
         grid-template-columns: 1fr 1fr 1fr;
@@ -225,7 +237,17 @@ let services = ref([
         z-index: 0;
     }
 }
-
+@media screen and (max-height:700px) and (min-width:900px){
+    .myServices{
+        gap: 2%;
+    }
+    .myService_head{
+        margin: 7vh 8vw 1vh 8vw;
+    }
+    .serviceCell {
+  grid-template-rows: 90px 30px auto 40px;
+}
+}
 
 @media screen and (max-width: 1500px) {
     .myService_image {
@@ -236,8 +258,6 @@ let services = ref([
             max-height: 100%;
         }
     }
-
-
     .s1::before {
         width: 251px;
     }
@@ -285,6 +305,25 @@ let services = ref([
     }
 }
 
+@media screen and (max-height:700px) and (min-width:900px){
+    .s1::before {
+        width: 180px;
+        height: 90px;
+    }
+    .s1::after {
+        width: 132px;
+        height: 101px;
+    }
+    .s2::before {
+        width: 220px;
+        height:140px;
+    }
+    .s2::after {
+        width: 225px;
+        height: 185px;
+    }
+}
+
 @media screen and (max-width:900px){
 .myServices_content{
     display: flex !important;
@@ -293,5 +332,7 @@ let services = ref([
 .myService_head{
     margin: 5vh 8vw 0 8vw !important;
 }
+
 }
+
 </style>

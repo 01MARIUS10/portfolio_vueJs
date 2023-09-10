@@ -14,67 +14,9 @@ let props = defineProps({
     }
 })
 let slides = ref(7)
-function isShow(i){
-    let res = (i==props.active ||  i==prec.value || i==next.value)? true:false
-    console.log(i,props.active,prec.value,next.value,res)
-    return res
-}
-let prec = computed(()=>{
-    let a = props.active-1;
-
-    a+=props.projects.length
-    a= a%props.projects.length
-    return a
-})
-let next = computed(()=>{
-    let a = props.active+1;
-    a+=props.projects.length
-    a= a%props.projects.length
-    return a
-})
-
-console.log(props.projects.length,'len')
 </script>
 
 <template>
-    <!-- <div class="projectList"> -->
-        <!-- <div class="prec">
-            <img @click="$emit('prec')" src="/image/angle-cercle-droite.png" alt="">
-        </div> -->
-        <!-- <template v-for="(project,i) in props.projects" >
-            <div v-if="isShow(i)" class="project card" :class="(i==props.active)? 'active':''" >
-                <div class="project_head">
-                    <p class="">{{ project.title }}</p>
-                </div>
-                <div class="project_content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Laboriosam, minima in? Obcaecati sint vitae cumque 
-                         at suscipit eum, error libero.</p>
-                </div>
-                <div class="project_action">
-                    <button @click="next" class="btn btn-primary"> see more</button>
-                </div>
-            </div>
-        </template> -->
-        <!-- <div class="next">
-            <img @click="$emit('next')" src="/image/angle-cercle-droite.png" alt="">
-        </div> -->
-    <!-- </div> -->
-    <!-- <Carousel3d>
-        <Slide :index="0">
-        Slide 1 Content
-        </Slide>
-        <Slide :index="1">
-        Slide 2 Content
-        </Slide>
-        <Slide :index="2">
-        Slide 1 Content
-        </Slide>
-        <Slide :index="3">
-        Slide 2 Content
-        </Slide>
-    </Carousel3d> -->
-    
     <Carousel3d :controls-visible="true" :clickable="false">
     <Slide v-for="(slide, i) in slides" :index="i">
       <figure>

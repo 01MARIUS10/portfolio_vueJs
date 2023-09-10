@@ -1,4 +1,6 @@
 <script setup>
+import { useContactStore } from '../../stores/contact.js';
+let useContact = useContactStore()
 let props = defineProps({
     service: {
         default: {
@@ -8,10 +10,13 @@ let props = defineProps({
         },
     },
 });
+const discuter = (title)=>{
+    useContact.contacter(`Discuter pour le service "${title}"`)
+}
 </script>
 
 <template>
-    <div class="serviceCell sombre" @hover="console.log('hiii')">
+    <div class="serviceCell sombre" >
         <div class="serviceCell_image">
             <img :src="props.service.img" alt="" />
         </div>
@@ -22,7 +27,10 @@ let props = defineProps({
         </ul>
         <div class="asking hidePhon1200">
             <button class="btn">
-                <a href="#contact"> Discuter </a>
+                <a
+                @click="discuter(props.service.title)"
+                 href="#contact"
+                > Discuter </a>
             </button>
         </div>
     </div>
@@ -46,7 +54,6 @@ let props = defineProps({
             font-size: 16px;
         }
         .serviceCell_text {
-            font-size: 14px !important;
             font-style: normal !important;
             font-weight: 400 !important;
             text-align: center;
@@ -83,6 +90,11 @@ let props = defineProps({
         background: white;
         box-shadow: none;
         border: solid 1.6px  rgb(27, 36, 48);
+          transition: 1s;
+          *{
+          transition: 1.3s;
+          }
+
             span{
                 color:#000;
             }
@@ -121,17 +133,20 @@ let props = defineProps({
         text-align: center;
     }
     .serviceCell_text{
+            font-size: 14px !important;
         padding: 0 5px;
-        line-height: 1.5rem !important;
+        line-height: 1.5rem ;
     }
 }
+
 @media screen and (max-width: 1500px) {
     .serviceCell {
         padding: 15px 20px 20px 20px;
             .serviceCell_text {
-            line-height: 22px !important;
+            line-height: 22px ;
         }
     }
+    
 }
 
 @media screen and (max-width: 1400px) {
@@ -171,6 +186,16 @@ let props = defineProps({
 //         }
 //     }
 // }
+@media screen and (max-height:700px) and (min-width:900px){
+    .serviceCell {
+  grid-template-rows: 90px 30px auto 40px;
+}
+.serviceCell_text{
+            font-size: 12px !important;
+        padding: 0 5px;
+        line-height: 1.2rem !important;
+    }
+}
 @media screen and (max-width: 600px) {
     .serviceCell {
         padding: 5px 8px;

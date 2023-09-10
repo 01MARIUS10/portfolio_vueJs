@@ -1,8 +1,7 @@
 // navigation.js
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 export function useTrackNavigation(elementsIds) {
-    // state encapsulated and managed by the composable
     const currentSection = ref(0);
     let previousPosition = ref(window.scrollY);
 
@@ -25,6 +24,9 @@ export function useTrackNavigation(elementsIds) {
     const descendre = () => {
         return window.scrollY < previousPosition.value;
     };
+    const blockScroll = computed(() => {
+        return currentSection.value == 3 ? "end" : "start";
+    });
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -33,7 +35,7 @@ export function useTrackNavigation(elementsIds) {
                     const element = entry.target;
                     element.scrollIntoView({
                         behavior: "smooth",
-                        block: "end",
+                        block: "start",
                     });
                     currentSection.value = elements.indexOf(element);
                     previousPosition.value = scrollTop;

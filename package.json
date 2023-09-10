@@ -12,6 +12,8 @@
     "@emailjs/browser": "^3.11.0",
     "bootstrap": "^5.3.1",
     "bootstrap-vue": "^2.23.1",
+    "pdfvuer": "^2.0.1",
+    "pinia": "^2.1.4",
     "sass": "^1.64.1",
     "vue": "^3.3.4",
     "vue-carousel": "^0.18.0",

@@ -17,7 +17,7 @@ export default {
 }
 </script>
 <template>
-    <div class="mb-2">
+    <div class="mb-4">
         <h1>
             <span is="type-async" id="type-text" class="letters" ref="name"
                 >...</span
@@ -31,11 +31,16 @@ export default {
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h1{
     font-weight: 600 !important;
     font-family: "Roboto" ,sans-serif !important;
+    font-size: 2.65rem !important;
     // font-size: 2rem !important;
+}
+.h3{
+    font-weight: 500 !important;
+    font-size: 2.3rem !important;
 }
 @media screen and (max-width:600px){
     h1{

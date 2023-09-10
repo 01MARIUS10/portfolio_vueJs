@@ -1,9 +1,55 @@
 <script setup>
-import { popScopeId, reactive, ref, computed } from "vue";
+import {  reactive, ref, computed } from "vue";
+import { RouterLink } from "vue-router";
 // import { Carousel3d, Slide } from 'vue3-carousel-3d';
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 
-let slides = ref(4);
+let slides = ref([
+    {
+        title:"TodoApp",
+        img: "/image/projet/todoApp--min.png",
+        description:` Une application de gestion de tâches avec VueJs. Permettant de créer, attribuer, et suivre des tâches avec titres, descriptions, et listes de sous-tâches
+        pouvant être cochées 
+        au fur et à mesure de leur achèvement.
+        `,
+        code_link:"https://github.com/01MARIUS10/ToDoApp_vuejs",
+        web_link:"https://01marius10-mytodoapp.netlify.app/"
+    },
+    {
+        title:"Bus Scolaire",
+        img: "/image/projet/busScolaire--min.png",
+        description:` 
+        Notre plateforme de ticketing, développée avec Vue.js, offre aux élèves la possibilité d'acheter des billets en ligne pour des trajets scolaires . Il génère un QR code unique qui est scanné lors de l'embarquement dans le bus.
+        `,
+        code_link:"https://github.com/01MARIUS10/projet_busScolaire",
+        web_link:"https://01marius10-buscolaire.netlify.app"
+    },
+    {
+        title:"Pizzeria BackOffice",
+        img: "/image/projet/pizzeriaDashBoard--min.png",
+        description:`développé avec Vue.js, 
+        Laravel et Inertia.js, 
+        
+         Il comprend des fonctionnalités pour la gestion 
+         des commandes, des menus, des livraisons, ainsi qu'une messagerie client, 
+         le tout soutenu par un tableau de bord .
+        `,
+        code_link:"https://github.com/01MARIUS10/pizzeria_laravel-vueJs.git",
+        web_link:null
+    },
+    {
+        title:"Forum API",
+        img: "/image/projet/rest-api-model--min.png",
+        description:`
+        un API cree a partir de Laravel .
+        Les utilisateurs peuvent discuter, poser des questions, partager des informations et interagir avec d'autres membres.
+
+        `,
+        code_link:"https://github.com/01MARIUS10/projet_forum_apiLaravel.git ",
+        web_link:null
+    },
+
+]);
 let settings = reactive({
     itemsToShow: 1,
     snapAlign: "center",
@@ -39,6 +85,11 @@ let breakpoints = reactive({
         snapAlign: "start",
     },
 });
+
+const goToCode = (projet)=>{
+    let link = projet.web_link? projet.web_link : projet.code_link
+    window.open(link,'_blank')
+}
 </script>
 
 <template>
@@ -49,24 +100,22 @@ let breakpoints = reactive({
             :transition="1000"
             :breakpoints="breakpoints"
         >
-            <Slide v-for="i in slides" :key="i">
-                <figure>
-                    <span class="title">Projet{{ i }}</span>
-                    <div class=" image w-100 d-flex justify-content-center mb-3">
-                        <div class="img">
-                            <img src="/image/project/projectImage.png" />
+            <Slide v-for="(projet,j) in slides" :key="j">
+                    <figure @click="goToCode(projet)">
+                        <span class="title">{{ projet.title }}</span>
+                        <div class=" image w-100 d-flex justify-content-center mb-3">
+                            <div class="img">
+                                <img :src="projet.img" />
+                            </div>
                         </div>
-                    </div>
-                    <figcaption>
-                        <p class="description">
-                            <span>Description:</span>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Hic nam omnis amet nihil recusandae blanditiis
-                            accusamus accusantium aspernatur enim, nulla dolor?
-                        </p>
-                    </figcaption>
-                    
-                </figure>
+                        <figcaption>
+                            <p class="description">
+                                <span>Description:</span>
+                                {{ projet.description }}
+                            </p>
+                        </figcaption>
+                        
+                    </figure>
             </Slide>
             <template #addons>
                 <Navigation />
@@ -102,14 +151,14 @@ figure {
                 position: absolute;
                 top:50%;
                 left:50%;
-                width: 120%;
-                height: 120%;
+                width: 100%;
+                height: 100%;
                 transform: translate(-50%,-50%);
             }
         }
     }
     .description {
-        font-size: 1.02rem;
+        font-size: .9rem;
         // margin: 10px 30px;
         line-height: 1.4rem;
         text-align: initial;
@@ -128,32 +177,18 @@ figure {
     }
     &:hover{
         // margin: 0 15px;
-        transform: scale(1.1);
+        transform: scale(1.08);
+        transition: 1.3s;
+            .img{
+                img{
+                    width: 120%;
+                    height: 120%;
+        transition: 1.3s;
+            }
+            }
     }
 }
-// .technologie {
-//     display: flex;
-//     max-width: 90%;
-//     font-size: 18px;
-//     margin: 10px 20px;
-//     span {
-//         line-height: 167.5%;
-//         font-weight: 600;
-//         color: var(--bgDark);
-//     }
-//     .technologie_list {
-//         display: flex;
-//         p {
-//             background: var(--bgGris);
-//             padding: 5px;
-//             border-radius: 5px;
-//             img {
-//                 height: 25px;
-//                 width: 30px;
-//             }
-//         }
-//     }
-// }
+
 
 .carousel__pagination{
     margin-top: 24px;
