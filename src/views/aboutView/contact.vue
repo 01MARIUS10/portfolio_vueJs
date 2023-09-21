@@ -111,7 +111,7 @@ let useForm = useContactStore();
                         <div
                             class="col-lg-4 col-md-5 d-flex align-items-stretch"
                         >
-                            <div class="info-wrap  w-100 p-md-5 p-4">
+                            <div class="info-wrap  w-100 p-md-4 ">
                                 <h3 class="mb-4">Contactez-moi</h3>
                                 <p class="mb-4"> N'hésitez pas à
                                       me contacter pour toute question ou demande d'information.
@@ -248,6 +248,7 @@ let useForm = useContactStore();
                 a{
                     color:var(--f1pt);
                 }
+
                 .dbox {
                     width: 100%;
                     margin-bottom: 20px;
@@ -304,6 +305,12 @@ let useForm = useContactStore();
     border:2px solid red !important;
 }
 
+
+@media screen and (max-width:800px){
+.info-wrap{
+        padding: 2rem !important;
+    }
+}
 @media screen and (max-width:800px){
     .dbox{
         margin-bottom: 8px !important;

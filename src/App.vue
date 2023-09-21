@@ -13,18 +13,19 @@ import {  RouterView } from 'vue-router'
 </template>
 
 <style >
+html , body ,#app, #content{
+  width: 100%;
+  overflow: hidden;
+}
+#app ,#content{
+  height: 100lvh;
+}
 .route-enter-from{
   opacity:0;
-  /* transform: translateY(100px); */
 }
 .route-enter-active{
   transition: all 2.5s ease-out;
 }
-/* .route-leave-from{
-  opacity:0;
-  /* transform: translateY(100px); */
- /*}
-.route-leave-active{
-  transition: all 1.5s ease-in;
-} */
+
+
 </style>

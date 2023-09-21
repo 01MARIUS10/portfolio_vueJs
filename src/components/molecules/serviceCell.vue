@@ -21,11 +21,11 @@ const discuter = (title)=>{
             <img :src="props.service.img" alt="" />
         </div>
         <span class="serviceCell_title">{{ props.service.title }}</span>
-        <p class="serviceCell_text hidePhon800">{{ props.service.label }}</p>
+        <p class="serviceCell_text mb-0 hidePhon800">{{ props.service.label }}</p>
         <ul class="show800">
             <li v-for=" q in props.service.qualite">{{ q.title }}</li>
         </ul>
-        <div class="asking hidePhon1200">
+        <div class="asking hide900">
             <button class="btn">
                 <a
                 @click="discuter(props.service.title)"
@@ -150,86 +150,74 @@ const discuter = (title)=>{
 }
 
 @media screen and (max-width: 1400px) {
-//     .serviceCell {
-//   grid-template-rows: 85px 30px 130px 40px;
-// }
 .myServices{
     gap: 10%;
 }
 }
-// @media screen and (max-width: 1200px) {
-//     .serviceCell {
-//         display: grid;
-//         // grid-template-columns: auto 1fr;
-//         // grid-template-rows: 30px 1fr;
-//         // padding: 15px;
-//         // height: 160px;
-//         .serviceCell_image {
-//             margin:0;
-//             display: block;
-//             // grid-column: 1;
-//             // grid-row: 1;
-//             display: flex;
-//             align-items: center;
-//             height: fit-content;
-//         }
-//         // .serviceCell_title{
-//         //     display: block;
-//         //     grid-column: 2;
-//         //     grid-row: 1;
-//         // }
-//             .serviceCell_text ,ul{
-//             // display: block;
-//             // grid-column: 2;
-//             // grid-row: 2;
-//             line-height: 21px !important;
-//         }
-//     }
-// }
-@media screen and (max-height:700px) and (min-width:900px){
+@media screen and (max-width: 900px) {
     .serviceCell {
-  grid-template-rows: 90px 30px auto 40px;
-}
-.serviceCell_text{
-            font-size: 12px !important;
-        padding: 0 5px;
-        line-height: 1.2rem !important;
-    }
-}
-@media screen and (max-width: 600px) {
-    .serviceCell {
-        padding: 5px 8px;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: 30px 1fr;
-        height: 160px;
-        
+        display: flex;
+        flex-direction: column;
+        position:relative;
+        $padding : 25px;
+        $height : 150px;
+
+        height: $height;
+        padding: $padding $padding $padding calc($height + 3*$padding);
+
         .serviceCell_image {
-            width: 100%;
-            height: 45%;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            width: 180px;
+            margin:0;
+            display: block;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            grid-column: 1;
-            grid-row: 1;
             img{
-                width: auto;
                 height: 100%;
+                max-height: 100%;
                 max-width: 100%;
             }
         }
-            ul{
-                padding: 0;
-            }
-              .serviceCell_title{
+        .serviceCell_title{
             display: block;
-            grid-column: 2;
-            grid-row: 1;
         }
             .serviceCell_text ,ul{
             display: block;
-            grid-column: 2;
-            grid-row: 2;
             line-height: 21px !important;
         }
     }
+    .hide900{
+      display: none !important;
+    }
 }
+
+
+@media screen and (max-width: 450px) {
+    .serviceCell{
+        $padding : 5px;
+        $height : 125px;
+        justify-content: center;
+        align-items: center;
+
+        height: $height;
+        padding: $padding $padding $padding 90px;
+    }
+    .serviceCell_image{
+        width: 80px !important;
+        img{
+            height: auto !important;
+            width: 100%;
+        }
+    }
+    ul{
+        margin:0;
+        padding: 0;
+        list-style:inside;
+    }
+}
+
 </style>

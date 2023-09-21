@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import { ref,computed } from "vue";
 import serviceCell from "@/components/molecules/serviceCell.vue";
-// https://olaolu.dev/
+let question = computed(()=>{
+    return window.innerWidth>1050 ? 'Quels services je vous propose ?':'Quels services je propose ?'
+})
 let services = ref([
     {
         title: "Integration web",
@@ -60,11 +62,11 @@ let services = ref([
     },
     
     {
-        title: "Backend Laravel et Nodejs",
+        title: "PHP Laravel et Symfony",
         subtitle:
             "Transformez des conceptions saisissantes en expériences web fluides et fonctionnelles.",
         label: `
-        Je develloppe des applications backend restAPI avec les framework Laravel et Nodejs
+        Je develloppe des applications backend restAPI avec les framework Laravel et Symfony
          .Avec les bonnes conceptions et architectures conforme a votre projet`,
         qualite: [
             {
@@ -92,7 +94,7 @@ let services = ref([
         <div class="myService_head">
             <div class="text ">
                 <p class="firstText">Mes Competences</p>
-                <p class="h3 question">Quels services je vous propose ?</p>
+                <p class="h3 question">{{ question }}</p>
                 <p class="accentSecondText hidePhon400">
                     Découvrez ci-dessous les services que je propose pour vous
                     accompagner dans la réalisation de vos projets web.
@@ -237,6 +239,16 @@ let services = ref([
         z-index: 0;
     }
 }
+@media screen and (max-width: 1050px){
+    .myService_head{
+        margin: 7vh 6vw 1vh 6vw;
+    }
+    .myServices_content{
+        padding:15px 5% 5% 5% !important;
+        gap:20px;
+    }
+    
+}
 @media screen and (max-height:700px) and (min-width:900px){
     .myServices{
         gap: 2%;
@@ -281,11 +293,6 @@ let services = ref([
         gap: 0;
         justify-content: space-around;
     }
-    // .myServices_content {
-    //     display: grid;
-    //     grid-template-columns: 1fr 1fr;
-    //     grid-template-rows: 1fr 1fr;
-    // }
 
     .s1::before {
         width: 200px;
@@ -334,5 +341,18 @@ let services = ref([
 }
 
 }
+@media screen and (max-width:450px){
+    .question{
+        font-size: 21px;
+    }
+
+.myService_head{
+    margin: 3vh 1vw 0 1vw !important;
+}
+.myServices_content{
+    padding: 15px 0 0 0  !important;
+}
+}
+
 
 </style>

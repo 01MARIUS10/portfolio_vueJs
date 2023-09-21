@@ -1,5 +1,13 @@
 <script setup>
-import { ref,watch } from 'vue';
+import { ref,computed } from 'vue';
+let text = computed(()=>{
+    let short = `Je suis ravi de vous presenter un apercu sur mes realisations web , ou je partage fierement mon travail.
+ Chacun de ses projets representent un defi et contribue a ma croissance proffessionnel et competences. `
+ let long = `Je suis ravi de vous presenter un apercu sur mes realisations web , ou je partage fierement mon travail ainsi que ma passion et devotion pour le devellopement Web .
+Avoir une meilleur approche du probleme et de maniere simple tout en adoptant une architecture propre , 
+ Chacun de ses projets representent un defi et contribue a ma croissance proffessionnel et competences. `
+    return window.innerWidth<450 ? short:long
+})
 import carousselProjects from '@/components/molecules/carousselProjects.vue'
 
 let projects = ref([
@@ -43,13 +51,8 @@ let projects = ref([
         <div class="myProjects_head">
             <h1 class="firstText">Mes projets</h1>
             <p class="accentSecondText">
-                 <!-- I have had the opportunity to work on a variety of exciting projects that have allowed me to showcase my skills and creativity as a front and backend developer.
-Dedicated and passionate about coding development, my approach is driven by an insatiable curiosity and a profound appreciation for the art of programming. -->
-
-Je suis ravi de vous presenter un apercu sur mes realisations web , ou je partage fierement mon travail ainsi que ma passion et devotion pour le devellopement Web .
-Avoir une meilleur approche du probleme et de maniere simple tout en adoptant une architecture propre , 
- Chacun de ses projets representent un defi et contribue a ma croissance proffessionnel et competences. 
-</p>
+                {{ text }}
+            </p>
         </div>
         <div class="myProjects_content">
             <carousselProjects />
@@ -95,6 +98,12 @@ Avoir une meilleur approche du probleme et de maniere simple tout en adoptant un
     }
     .firstText{
         margin-bottom: 0 !important;
+    }
+}
+
+@media screen and (max-width:1050px){
+    .myProjects_head{
+        margin: 7vh 6vw 1vh 6vw;
     }
 }
 @media screen and (max-width:900px){

@@ -3,6 +3,11 @@
       display: none !important;
     }
   }
+  @media screen and (min-width:900px){
+    .hide900{
+      display: none !important;
+    }
+  }
   @media screen and (max-width:800px){
     .hidePhon800{
       display: none !important;

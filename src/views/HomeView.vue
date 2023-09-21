@@ -8,6 +8,16 @@ let debugScreen = computed(()=>{
     console.log(screenSize)
     return (window.innerWidth<800)? screenSize:''
 })
+let text = computed(()=>{
+    let long = `Passionné par la création de systèmes efficaces, évolutifs et fiables, 
+                        je me suis spécialisé dans le développement de solutions web. Mon objectif principal 
+                        est de concevoir des processus fluides qui optimisent l'expérience utilisateur. En plus 
+                        de mes compétences techniques, je possède une grande aptitude au travail collaboratif au sein d'équipes professionnelles.`
+    let short = `Passionné par la création de systèmes efficaces, évolutifs et fiables, 
+                        je me suis spécialisé dans le développement de solutions web. Mon objectif principal 
+                        est de concevoir des processus `
+    return window.innerHeight<750 ? short:long
+})
 </script>
 
 <template>
@@ -19,11 +29,7 @@ let debugScreen = computed(()=>{
                         <typeAnimation />
                     </div>
                     <p class="mb-4">
-                        Passionné par la création de systèmes efficaces, évolutifs et fiables, 
-                        je me suis spécialisé dans le développement de solutions web. Mon objectif principal 
-                        est de concevoir des processus fluides qui optimisent l'expérience utilisateur. En plus 
-                        de mes compétences techniques, je possède une grande aptitude au travail collaboratif au sein d'équipes professionnelles.
-                       
+                       {{ text }}
                     </p>
                     <div class="w-100 d-flex goTo">
                         <router-link to="/about">
@@ -71,7 +77,6 @@ main {
         .presentation {
             p {
                 color: var(--purple);
-                // font-family: "Roboto" , sans-serif !important;
             }
             a {
                 text-decoration: none;
@@ -173,8 +178,8 @@ main {
                 justify-content: center;
             }
             button {
-                padding: 6px 10px;
-                font-size: 15px;
+                padding: 13px 15px;
+                font-size: 19px;
             }
         }
     }
@@ -185,6 +190,32 @@ main {
             .presentation{
                 p{
                     font-size: .9rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:430px ) {
+    main{
+        .main{
+            .index{
+                height: 700px;
+            }
+            .presentation{
+                h1{
+                    font-size: 1.8rem !important;
+                }
+                h1.h3{
+                    color:2rem;
+                }
+            }
+        }
+    }
+    @media screen and (max-height:700px ){
+        main{
+            .main{
+                .index{
+                    height: 500px;
                 }
             }
         }

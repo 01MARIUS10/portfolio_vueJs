@@ -21,7 +21,7 @@ onMounted(()=>{
 </script>
 <template>
     <div class="about">
-        <div class="debugColor">
+        <!-- <div class="debugColor">
             <ul class="d-flex p-0 m-0">
                 <li>
                     <span>#1B2430</span>
@@ -39,7 +39,7 @@ onMounted(()=>{
                     <span>rgba(214, 213, 168, 1)</span>
                 </li>
             </ul>
-        </div>
+        </div> -->
         <div class="navig">
             <navigation :item="navigationObserver.currentSection" />
         </div>
@@ -112,11 +112,11 @@ $nav: 80px;
         background: whitesmoke;
     }
     .content-scroll {
-        min-width: 100%;
+        width: 100%;
     }
 }
 .show {
-    padding: 65px 100px 65px calc(100px + $nav);
+    padding: 65px 100px 65px calc(100px - $nav);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -126,6 +126,7 @@ $nav: 80px;
 .show > div {
     border: solid 2px grey;
     height: 100%;
+    padding: 15px;
 }
 
 @media screen and (max-width: 2300px) {
@@ -158,7 +159,7 @@ $nav: 80px;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     .show {
         padding: 45px 50px 45px calc(50px + $nav);
     }
@@ -166,8 +167,8 @@ $nav: 80px;
 @media screen and (max-width: 900px) {
     $nav: 50px;
     .about {
-        height: 100vh;
-        width: 100vw;
+        height: 100lvh;
+        width: 100lvw;
         display: grid;
         grid-template-rows: $nav 1fr;
         .navig {
@@ -189,7 +190,7 @@ $nav: 80px;
                 display: flex;
                 #contact {
                     width: 100vw;
-                    height: 100vh;
+                    height: 100lvh;
                 }
             }
         }
