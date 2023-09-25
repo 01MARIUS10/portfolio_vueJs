@@ -15,8 +15,8 @@ let useForm = useContactStore();
 
 <template>
     <div class="contact">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
+        <div class="row mx-0 justify-content-center">
+            <div class="col-md-12 p-0">
                 <div class="wrapper">
                     <div class="row no-gutters">
                         <div

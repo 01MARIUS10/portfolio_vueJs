@@ -15,10 +15,6 @@ import {  RouterView } from 'vue-router'
 <style >
 html , body ,#app, #content{
   width: 100%;
-  overflow: hidden;
-}
-#app ,#content{
-  height: 100lvh;
 }
 .route-enter-from{
   opacity:0;

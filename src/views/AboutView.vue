@@ -133,7 +133,7 @@ $nav: 80px;
     .show {
         padding: 45px 80px 45px calc(80px + $nav);
         height: 100vh;
-        width: 100vw;
+        width: 100%;
     }
     .navig {
         position: fixed;
