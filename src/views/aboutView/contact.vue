@@ -14,7 +14,7 @@ let useForm = useContactStore();
 </script>
 
 <template>
-    <div class="contact p-0 border-0">
+    <div class="contact p-0 ">
         <div class="row h-100 mx-0 justify-content-center">
             <div class="col-md-12 p-0">
                 <div class="wrapper h-100">

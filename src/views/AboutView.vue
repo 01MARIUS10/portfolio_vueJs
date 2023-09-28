@@ -106,10 +106,12 @@ $nav: 80px;
     #myService {
         background: #fff;
     }
-    #myProjects,
-    #contact {
+    #myProjects{
         // background: rgba($color: #51557E, $alpha: .1);
         background: whitesmoke;
+    }
+    #contact{
+        background: var(--f1);
     }
     .content-scroll {
         width: 100%;
