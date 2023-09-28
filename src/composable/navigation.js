@@ -33,10 +33,10 @@ export function useTrackNavigation(elementsIds) {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
                     const element = entry.target;
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center",
-                    });
+                    // element.scrollIntoView({
+                    //     behavior: "smooth",
+                    //     block: "center",
+                    // });
                     currentSection.value = elements.indexOf(element);
                     previousPosition.value = scrollTop;
                 }
