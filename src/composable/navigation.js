@@ -35,7 +35,7 @@ export function useTrackNavigation(elementsIds) {
                     const element = entry.target;
                     element.scrollIntoView({
                         behavior: "smooth",
-                        block: "start",
+                        block: "center",
                     });
                     currentSection.value = elements.indexOf(element);
                     previousPosition.value = scrollTop;

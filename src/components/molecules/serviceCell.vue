@@ -167,9 +167,9 @@ const discuter = (title)=>{
 
         .serviceCell_image {
             position: absolute;
-            top:0;
-            bottom: 0;
-            left: 0;
+            top:20px;
+            bottom: 20px;
+            left: 20px;
             width: 180px;
             margin:0;
             display: block;

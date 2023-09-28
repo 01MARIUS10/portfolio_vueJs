@@ -54,7 +54,7 @@ onMounted(()=>{
                 <div id="myProjects" class="show item3">
                     <myProjects />
                 </div>
-                <div id="contact" class="item4">
+                <div id="contact" class=" show item4">
                     <contact />
                 </div>
             </div>
@@ -143,9 +143,6 @@ $nav: 80px;
         bottom: 0;
         right: calc(100vw - $nav);
     }
-    #contact {
-        padding-left: $nav;
-    }
     .debugColor {
         li {
             padding: 5px 10px;
@@ -190,7 +187,7 @@ $nav: 80px;
                 display: flex;
                 #contact {
                     width: 100vw;
-                    height: 100lvh;
+                    height: calc(100lvh - $nav);
                 }
             }
         }

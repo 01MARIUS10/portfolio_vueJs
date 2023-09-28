@@ -14,23 +14,24 @@ let useForm = useContactStore();
 </script>
 
 <template>
-    <div class="contact">
-        <div class="row mx-0 justify-content-center">
+    <div class="contact p-0 border-0">
+        <div class="row h-100 mx-0 justify-content-center">
             <div class="col-md-12 p-0">
-                <div class="wrapper">
-                    <div class="row no-gutters">
+                <div class="wrapper h-100">
+                    <div class="row h-100 no-gutters p-md-4 p-lg-5 parent">
                         <div
-                            class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch"
+                            class="col-md-7 order-md-last d-flex align-items-stretch el1"
                         >
-                            <div class="contact-wrap d-flex align-items-center w-100 p-md-5 p-4">
+                            <div class="contact-wrap d-flex align-items-center w-100">
                                 <!-- <h3 class="mb-4">Get in touch</h3> -->
                                 <form
                                     method="POST"
                                     id="contactForm"
                                     name="contactForm"
-                                    class="contactForm"
+                                    class="contactForm p-4 h-100 rounded-2"
                                     @submit.prevent="useForm.submit"
                                     ref="formRef"
+
                                 >
                                     <div class="row">
                                         <div class="col-md-6 pb-3">
@@ -109,13 +110,14 @@ let useForm = useContactStore();
                             </div>
                         </div>
                         <div
-                            class="col-lg-4 col-md-5 d-flex align-items-stretch"
+                            class="d-flex col-md-5 align-items-stretch el2 "
                         >
-                            <div class="info-wrap  w-100 p-md-4 ">
-                                <h3 class="mb-4">Contactez-moi</h3>
-                                <p class="mb-4"> N'hésitez pas à
-                                      me contacter pour toute question ou demande d'information.
-                                </p>
+                            <div class="info-wrap py-md-2 px-sm-0 px-4 py-4 w-100">
+                                <h3 class="mb-md-2 mb-1">Contactez-moi</h3>
+                                <h3 class="mb-md-2 mb-1">faisons naître de 
+                                    <span class="txt">superbes idées</span>
+                                </h3>
+                                <h3 class="mb-md-5 mb-3">ensemble!</h3>
                                 <div
                                     class="dbox w-100 "
                                 >
@@ -205,9 +207,16 @@ let useForm = useContactStore();
         .no-gutters {
             margin-right: 0px;
             margin-left: 0px;
+            
+
+            background: var(--f1);
             .contact-wrap{
-                background: var(--f4);
-            }
+                background: var(--f1);
+                form{
+                    background: var(--f4);
+                }
+            } 
+                
             #contactForm {
                 input,textarea{
                     padding: 5px !important;
@@ -245,6 +254,9 @@ let useForm = useContactStore();
             .info-wrap{
                 background: var(--f1);
                 color:var(--f1pt);
+                span.txt{
+                    color:var(--f4);
+                }
                 a{
                     color:var(--f1pt);
                 }
@@ -255,8 +267,8 @@ let useForm = useContactStore();
                     display: flex;
                     align-items: center;
                     .icon {
-                        width: 50px;
-                        height: 50px;
+                        width: 35px;
+                        height: 35px;
                         border-radius: 50%;
                         border: 2px solid rgba(255, 255, 255, 0.2);
                         .IconSpan{
@@ -306,11 +318,7 @@ let useForm = useContactStore();
 }
 
 
-@media screen and (max-width:800px){
-.info-wrap{
-        padding: 2rem !important;
-    }
-}
+
 @media screen and (max-width:800px){
     .dbox{
         margin-bottom: 8px !important;
