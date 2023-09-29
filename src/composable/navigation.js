@@ -43,7 +43,7 @@ export function useTrackNavigation(elementsIds) {
             });
         },
         {
-            threshold: 0.1,
+            threshold: 0.5,
         }
     );
     elements.forEach((element) => {
