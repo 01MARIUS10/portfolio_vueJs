@@ -27,7 +27,7 @@ let services = ref([
             {
                 title: "Respect des Normes",
                 cle: "norme SEO,...",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
+                label: "votre site fonctionne de manière cohérente sur différents navigateurs (Chrome, Firefox, Safari, etc.) et plates-formes (Windows, macOS, Android, iOS, etc.).",
             },
         ],
         img: "/image/autonomie.png",
@@ -43,19 +43,19 @@ let services = ref([
         `,
         qualite: [
             {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
+                title: "Bonne connaissance en design",
+                cle: "UX",
+                label: "l'esthétique est essentielle pour créer des interfaces utilisateur attrayantes et conviviales coorespondant a la bonne experiences utilisateurs.",
             },
             {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
+                title: "Pensée Analytique ",
+                cle: "qualite",
+                label: " La capacité à analyser des problèmes complexes, à décomposer des défis en éléments plus petits et rendre l'interface plus dynamiques et flexibles selon les besoins requis .",
             },
             {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
+                title: "Optimisation des Performances ",
+                cle: "Norme",
+                label: " rendre les sites web et les applications plus rapides et plus réactifs, offrant ainsi une meilleure expérience utilisateur. ",
             },
         ],
         img: "/image/autonomie.png",
@@ -70,19 +70,19 @@ let services = ref([
          .Avec les bonnes conceptions et architectures conforme a votre projet`,
         qualite: [
             {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
+                title: "Conception logiques metiers",
+                cle: "backend logic",
+                label: " collaborer étroitement avec les parties prenantes métier pour comprendre leurs objectifs, leurs exigences fonctionnelles et leurs contraintes et ainsi modeliser les processus et fonctionnalites",
             },
             {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
+                title: "Normes de codage rigoureuses ",
+                cle: "qualite",
+                label: " Maintenir des normes de codage strictes, en suivant les meilleures pratiques de l'industrie pour garantir que mon code est facilement lisible, maintenable et évolutif.",
             },
             {
-                title: "Précision dans les Détails",
-                cle: "Precision",
-                label: " Chaque pixel compte. Je m'engage à reproduire fidèlement chaque élément de la maquette pour garantir que le rendu final reflète la vision du designer.",
+                title: "Mise en production",
+                cle: "Docker",
+                label: " Faciliter le deployement avec l'outils docker , garanti une meilleur gestions des dependances et la portabilites de notre application .",
             },
         ],
         img: "/image/autonomie.png",
@@ -90,7 +90,7 @@ let services = ref([
 ]);
 </script>
 <template>
-    <div class="myServices contentSection">
+    <div class="myServices contentSection w-100">
         <div class="myService_head">
             <div class="text ">
                 <p class="firstText">Mes Competences</p>
@@ -339,11 +339,20 @@ let services = ref([
 .myService_head{
     margin: 5vh 8vw 0 8vw !important;
 }
-
+}
+@media screen and (max-width:900px){
+    .myServices{
+        // justify-content: inherit;
+    }
 }
 @media screen and (max-width:450px){
     .question{
-        font-size: 21px;
+        font-size: 20px;
+    }
+    .myServices{
+        padding-top: 16%;
+        justify-content: start;
+        gap:20px;
     }
 
 .myService_head{
@@ -352,6 +361,25 @@ let services = ref([
 .myServices_content{
     padding: 15px 0 0 0  !important;
 }
+}
+@media screen and (max-height:660px){
+    .question{
+        font-size: 20px;
+        letter-spacing: 0;
+    }
+    .myServices{
+        padding-top: 0%;
+        justify-content: start;
+        gap:20px;
+    }
+
+.myService_head{
+    margin: 3vh 1vw 0 1vw !important;
+}
+.myServices_content{
+    padding: 15px 0 0 0  !important;
+}
+
 }
 
 

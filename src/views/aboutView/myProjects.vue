@@ -112,4 +112,22 @@ let projects = ref([
         margin: 5vh 8vw 0 8vw !important;
     }
 }
+@media screen and (max-width:450px){
+    .myProjects{
+
+    .myProjects_head{
+        margin: 5% 0vw 20px 0vw !important;
+        justify-content: start;
+        height: auto;
+        
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .myProjects_content{
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    }
+}
 </style>

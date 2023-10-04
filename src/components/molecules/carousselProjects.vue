@@ -220,4 +220,16 @@ figure {
     color:#fff
     // padding:5px;
 }
+@media screen and (max-width:450px){
+    figure{
+        grid-template-rows: 30px 120px 160px !important;
+        padding: 20px 15px;
+    }
+    .carousel__next{
+    right: -20px;
+}
+.carousel__prev{
+    left: -20px;
+}
+}
 </style>

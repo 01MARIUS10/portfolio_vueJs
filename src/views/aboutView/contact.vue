@@ -9,7 +9,7 @@ import { useContactStore } from '../../stores/contact.js';
 //9DAsT4Bhpsm 
 
 let useForm = useContactStore();
-
+let formRef = ref('')
 
 </script>
 
@@ -29,7 +29,7 @@ let useForm = useContactStore();
                                     id="contactForm"
                                     name="contactForm"
                                     class="contactForm p-4 h-100 rounded-2"
-                                    @submit.prevent="useForm.submit"
+                                    @submit.prevent="useForm.submit(formRef)"
                                     ref="formRef"
 
                                 >
@@ -323,6 +323,17 @@ let useForm = useContactStore();
     .dbox{
         margin-bottom: 8px !important;
 
+    }
+}
+@media screen and (max-width:450px){
+    .info-wrap{
+        h3{
+            font-size: calc(1.1rem + 0.6vw);
+        }
+        .icon{
+            width: 30px !important;
+            height: 30px !important;
+        }
     }
 }
 </style>

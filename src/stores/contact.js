@@ -47,15 +47,14 @@ export const useContactStore = defineStore("contact", () => {
         form.subject = "";
         form.message = "";
     }
-    function submit() {
+    function submit(form) {
         console.log("send ...");
-
         if (isValidate()) {
             emailjs
                 .sendForm(
                     "service_mpjkp5l",
                     "template_kjn5jty",
-                    formRef.value,
+                    form,
                     "8c7YCi1q_9ViT92Tn"
                 )
                 .then(

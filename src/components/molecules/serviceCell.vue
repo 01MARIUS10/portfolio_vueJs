@@ -22,7 +22,7 @@ const discuter = (title)=>{
         </div>
         <span class="serviceCell_title">{{ props.service.title }}</span>
         <p class="serviceCell_text mb-0 hidePhon800">{{ props.service.label }}</p>
-        <ul class="show800">
+        <ul class="show800 p-0">
             <li v-for=" q in props.service.qualite">{{ q.title }}</li>
         </ul>
         <div class="asking hide900">
@@ -165,12 +165,14 @@ const discuter = (title)=>{
         height: $height;
         padding: $padding $padding $padding calc($height + 3*$padding);
 
+        // padding: $padding $padding $padding calc($height + $padding);
+
         .serviceCell_image {
             position: absolute;
-            top:20px;
-            bottom: 20px;
-            left: 20px;
-            width: 180px;
+            top:12%;
+            bottom: 12%;
+            left: 5%;
+            width: 30%;
             margin:0;
             display: block;
             display: flex;
@@ -184,14 +186,21 @@ const discuter = (title)=>{
         }
         .serviceCell_title{
             display: block;
+            padding-left: 30%;
         }
             .serviceCell_text ,ul{
             display: block;
             line-height: 21px !important;
+            margin-left: 20%;
         }
     }
     .hide900{
       display: none !important;
+    }
+}
+@media screen and (max-width:800px){
+    .serviceCell_title{
+        text-align:start;
     }
 }
 
@@ -205,12 +214,24 @@ const discuter = (title)=>{
 
         height: $height;
         padding: $padding $padding $padding 90px;
-    }
-    .serviceCell_image{
-        width: 80px !important;
-        img{
-            height: auto !important;
-            width: 100%;
+        .serviceCell_title{
+            padding-left: 15%;
+            font-size: 13px;
+        }
+        .serviceCell_text ,ul{
+            display: block;
+            line-height: 21px !important;
+            margin-left: 5%;
+        }
+        .serviceCell_image{
+            width: 80px !important;
+            img{
+                height: auto !important;
+                width: 100%;
+            }
+        }
+        li{
+            font-size: 12px;
         }
     }
     ul{
