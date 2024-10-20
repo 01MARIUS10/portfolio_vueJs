@@ -99,4 +99,6 @@ font-weight: 400 !important;
   
 .contentSection{
   max-width: 1400px;
+  display: flex;
+  flex-direction: column;
 }

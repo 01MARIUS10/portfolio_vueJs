@@ -63,8 +63,8 @@ let projects = ref([
 <style lang="scss" scoped>
 .myProjects{
     .myProjects_head{
-        height: 25vh;
-        margin: 10vh 8vw 0 8vw;
+        height: 20vh;
+        margin: 8vh 6vw 0 6vw;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -73,6 +73,7 @@ let projects = ref([
         position: relative;
         margin:0 5%;
         margin-bottom: 1vh;
+        flex-grow: 1;
         .myProjects_card{
             height: 100%;
         }

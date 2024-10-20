@@ -38,6 +38,16 @@ let slides = ref([
         web_link:null
     },
     {
+        title:"Strong PHP architecture",
+        img: "https://miro.medium.com/v2/resize:fit:1400/1*43uKsXfq35PrJKJTBq1MJw.png",
+        description:`
+            Architecture PHP , ou les routes sont gerer dynamiquement avec des models , controllers , services , views
+            et un ORM integrer nativement . Avec des sessions pour utilisateur et des parties special admin . 
+        `,
+        code_link:"https://github.com/01MARIUS10/reseau_sociaux-withArchitecture ",
+        web_link:null
+    },
+    {
         title:"Forum API",
         img: "/image/projet/rest-api-model--min.png",
         description:`
@@ -114,7 +124,6 @@ const goToCode = (projet)=>{
                                 {{ projet.description }}
                             </p>
                         </figcaption>
-                        
                     </figure>
             </Slide>
             <template #addons>
@@ -133,11 +142,11 @@ figure {
     background: #fff;
     box-shadow: 0px 4px 94px 0px rgba(0, 0, 0, 0.05);
     display: grid;
-    grid-template-rows: 30px 120px 130px ;
+    grid-template-rows: 50px 130px 200px ;
     .title {
         font-size: 1.5rem;
         font-weight: 600;
-        line-height: 1rem;
+        line-height: 1.4rem;
     }
     .image{
 
@@ -177,7 +186,8 @@ figure {
     }
     &:hover{
         // margin: 0 15px;
-        transform: scale(1.08);
+        transform: scale(1.03);
+        border:solid 2px  var(--bgDark);
         transition: 1.3s;
             .img{
                 img{
@@ -188,15 +198,21 @@ figure {
             }
     }
 }
-
+.carousel{
+    height:100%;
+}
 
 .carousel__pagination{
-    margin-top: 24px;
+    margin-top: 25px;
 }
 .carousel__viewport {
     overflow-y: inherit !important;
     overflow-x:hidden !important;
-    padding:20px 0;
+    padding:20px 0 ;
+    height:90%;
+}
+.carousel__track{
+    height:100%;
 }
 .carousel__next{
     right: -50px;
